@@ -2,15 +2,6 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-primary pull-right">2</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="index.html">Ecommerce </a></li>
-                                <li><a href="index1.html">Analytics </a></li>
-                            </ul>
-               <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="index.html">Ecommerce </a></li>
@@ -43,29 +34,6 @@
                         </li>
 						</ul>
                 </nav>          </li>
-                        <li class="nav-label">Admin</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Students</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li ><a href="addstudent.php"> <i class="fa fa-user-plus"></i> Add Student</a></li>
-                                <li><a href="#">View</a></li>
-                                <li><a href="#">Reports</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Enquiries</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="chart-flot.html">Add Enquiry</a></li>
-                                <li><a href="chart-morris.html">Enquiry Report</a></li>
-                                <li><a href="chart-chartjs.html">Online Enquiries</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Contact</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="ui-alert.html">Students</a></li>
-                                <li><a href="ui-button.html">Employee</a></li>
-                                <li><a href="ui-dropdown.html">Email</a></li>
-                                <li><a href="ui-progressbar.html">Bulk SMS</a></li>
-                            </ul>
-                        </li>
+                        
 						</ul>
                 </nav>
