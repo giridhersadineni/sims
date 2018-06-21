@@ -136,7 +136,7 @@
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile8" role="tab"><span>Previous</span></a> </li></ul>
 
 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span>Next</span></a> </li></ul>
+                                    <li class="nav-item"> <a class="btn-success" data-toggle="tab" href="#messages8" role="tab">Next</a> </li></ul>
                                     </div>
                                     <div class="tab-pane p-20" id="messages8" role="tabpanel">
                                     <div class="form-group">

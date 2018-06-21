@@ -34,7 +34,7 @@ h3
                     <div class="card card-outline-primary">        
                                 <center>
                             <div class="card-header">
-                                <h4 class="m-b-0 text-white">STUDENT REGISTRATION FORM</h4>
+                                <h4 class="m-b-0 text-white">STUDENT REGISTRATION </h4>
 
                             </div>
 </center>
@@ -42,24 +42,17 @@ h3
                             
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
-                                       
-<!--student name-->
-                                        <div class="row p-t-20">
-                                          <div class="col-md-6">
-                                         <div class="form-group">
+                <form action="checkpost.php" method="POST">
+                            <div class="row p-t-20"><div class="col-md-6"><div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12"><h4>Student Firstname</h4></p>
+                            <input type="text" class="form-control input-focus " placeholder="Enter student firstname" name="sfname"></div></div>
+                            <div class="col-md-6">
+                            <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Student Firstname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter student firstname"></div></div>
-                                            <div class="col-md-6">
-                                         <div class="form-group">
+                        <p class="text-muted m-b-15 f-s-12"><h4>Student Lastname</h4></p>
+                        <input type="text" class="form-control input-focus " placeholder="Enter student lastname">
+                    </div></div></div>
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Student Lastname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter student lastname">
-                                        </div></div></div>
-<!--student name close-->
-
-<!--student name-->
                                     <div class="row p-t-20">
                                           <div class="col-md-6">
                                          <div class="form-group">
@@ -72,9 +65,7 @@ h3
                                             <p class="text-muted m-b-15 f-s-12"><h4>Father Lastname</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter Father's lastname">
                                         </div></div></div>
-<!--student name close-->
 
-<!--student name-->
 <div class="row p-t-20">
                                           <div class="col-md-6">
                                          <div class="form-group">
@@ -140,8 +131,7 @@ h3
 </div>
                               
                                         <br>                     
-                                        <p align="right"> <button style="height:45px;width:85px" class="button">SUBMIT</button></p>
-                                    </form>
+                                        <p align="right"> <input type="submit" class="button" value="Add Student">
                                 </div>
                             </div>
                         </div>

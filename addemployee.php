@@ -1,20 +1,4 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- @koraboina Sign out
-2
-0 0 giridhersadineni/skillverseims
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-skillverseims/employee.php
-ab65274  22 minutes ago
-@saisurekha123 saisurekha123 addstudent,employe,branch
-     
-292 lines (241 sloc)  15.1 KB
 <?php include "header.php";?>
 <head>
 <style>
