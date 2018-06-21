@@ -32,6 +32,12 @@
                                 <li><a href="#"><i class="fa fa-comment"></i> Bulk SMS</a></li>
                             </ul>
                         </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-phone-square"></i><span class="hide-menu">Admin</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="addemployee.php"><i class="fa fa-user"></i>  Add Employee</a></li>
+                                
+                            </ul>
+                        </li>
 						</ul>
                 </nav>          </li>
                         
