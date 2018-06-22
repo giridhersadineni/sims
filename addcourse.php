@@ -22,14 +22,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="processcourse.php">
+                                    <form action="processcourse.php" method="POST">
                                         <div class="form-group">
                                             <label>Course Name</label>
                                             <input type="text" class="form-control" placeholder="enter course name" name="name">
                                         </div>
                                         <div class="form-group">
                                             <label>Category</label>
-                                            <input type="text" class="form-control" placeholder="Password">
+                                            <input type="text" class="form-control" placeholder="category" name="description">
                                         </div>
                                         <div class="checkbox">
                                             <label>
