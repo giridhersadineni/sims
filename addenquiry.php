@@ -59,15 +59,11 @@
                                            
 <!--student name close-->
 <div class="row p-t-20">
-                                          <div class="col-md-6">
+                                          <div class="col-md-12">
                                          <div class="form-group">
                                            <p class="text-muted m-b-15 f-s-12"><h4>Father Name</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="firstname" name="fname" required></div></div>
-                                            <div class="col-md-6">
-                                        <div class="form-group">
-
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Lastname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="lastname"name="flname" >
+                                           <input type="text" class="form-control input-focus " placeholder="lastname" name="fname" required 
+                                            >
                                       </div></div></div>
 
                                         <div class="form-group">
@@ -211,13 +207,13 @@
                                        <div class="col-md-6">
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Branch-id</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="branchid" name="branch-id" required>
+                                            <input type="text" class="form-control input-focus" placeholder="branchid" name="branch-id">
                                         </div></div></div>
                                         <div class="row">
                                        <div class="col-md-6">
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Attended By</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="taken by" name="attended by" required>
+                                            <input type="text" class="form-control input-focus" placeholder="taken by" name="attendedby">
                                         </div></div></div>
                                         <div class="row">
                                        <div class="col-md-12">
