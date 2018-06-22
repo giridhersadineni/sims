@@ -20,7 +20,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="addenquiry.php"><i class="fa fa-user-plus"></i> Add Enquiry</a></li>
                                 <li><a href="#"><i class="fa fa-table"></i> Enquiry Report</a></li>
-                                <li><a href="#"><i class="fa fa-globe"></i> Online Enquiries</a></li>
+                                <li><a href="onlineenquiries.php"><i class="fa fa-globe"></i> Online Enquiries</a></li>
                                 
                             </ul>
                         </li>
