@@ -1,5 +1,53 @@
 <?php include "header.php";?>
- <div class="page-wrapper">
+<?php
+    if(isset($_POST["submit"])){
+            echo '<h1>inside submit</h1>';
+            include 'config.php';
+            $firstname=$_POST["sfname"];
+            $lastname=$_POST["slname"];
+            $fathername=$_POST["fname"];
+            $student=$_POST["student"];
+            $college=$_POST["clgname"];
+            $qualification=$_POST["qualification"];
+            $courseids=$_POST["courseid"];
+            $doj=$_POST["intrddate"];
+            $phoneno=$_POST["contactno"];
+            $alternateno=$_POST["altcontactno"];
+            $email=$_POST["mail-id"];
+            $addressline1=$_POST["hno"];
+            $addressline2=$_POST["street"];
+            $mandal=$_POST["mandal"];
+            $district=$_POST["district"];
+            $pincode=$_POST["pincode"];
+            $state=$_POST["state"];
+            $attendedby=$_POST["attendedby"];
+            $branchid=$_POST["branch-id"];
+            $remarks=$_POST["remarks"];
+            $courseinterested=implode(",",$_POST["coursesinterested"]);
+            echo $courseinterested;
+            $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+            if (!$conn){
+                echo '<script>alert("SERVER UNREACHABLE! CONTACT 9676211990")</script>';
+                header("Location:","error.php?error=".mysqli_connect_error);
+                
+            }
+            $sql = "INSERT INTO `enquiries` ( `firstname`, `lastname`, `fathername`, `student`, `college`, `qualifcation`, `courseids`, `courseinterested`, `doj`, `phoneno`, `alternateno`, `email`, `address line 1`, `address line 2`, `mandal`, `district`, `pincode`, `state`, `attendedby`, `branchid`, `remarks`) VALUES ('".$firstname."','".$lastname."','".$fathername."','".$student."','".$college."','".$qualification."',$student,'".$courseinterested."','".$doj."','".$phoneno."','".$alternateno."','".$email."','".$addressline1."','".$addressline2."','".$mandal."','".$district."','".$pincode."','".$state."','attendedby',5,'remarks')";
+            if ($conn->query($sql) === TRUE) {
+                echo '<script>alert("Added Enquiry Successfully");</script>';
+            } 
+            else {
+                echo '<script>alert("'.$sql."Error =".$conn->error.'");</script>';
+                 }
+
+            $conn->close();
+    }
+?>
+
+
+
+
+
+<div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
@@ -41,7 +89,7 @@
                                         <div class="card-body">
                                 
                                 <div class="basic-form">
-                                    <form action="checkpost.php" method="POST">
+                        <form action="addenquiry.php" method="POST">
                                     <div class="row p-t-20">
                                           <div class="col-md-6">
                                          <div class="form-group">
@@ -68,8 +116,8 @@
 
                                         <div class="form-group">
                                         <p class="text-muted m-b-15 f-s-12" required><h4> Are you a student?</h4></p>
-                                        <input type="radio" name="student" value="yes">Yes</input><br>
-                                        <input type="radio" name="student" value="No">No</input>
+                                        <input type="radio" name="student" value="1">Yes</input><br>
+                                        <input type="radio" name="student" value="0">No</input>
                                      
  
 
@@ -108,8 +156,8 @@
                                     <div class="row">
                                        <div class="col-md-6">
                                         <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Course-id
-                                            <input type="text" class="form-control input-focus" placeholder="courseid" name="courseid" required>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Course_ID
+                                            <input type="text" class="form-control input-focus" placeholder="courseid" name="courseid" value="1" required>
                                         </div></div></div>
 
                                            <p class="text-muted m-b-15 f-s-12" required><h4>Course Details</h4></p>
@@ -158,7 +206,7 @@
 
                                       
                                          <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Mail-id</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>E-Mail</h4></p>
                                             <input type="text" class="form-control input-focus" placeholder="enter your mail-id" name="mail-id" required >
                                          </div>
                                          <div class="form-group">
@@ -222,7 +270,7 @@
                                             <input type="text" class="form-control input-focus" placeholder="remarks" name="remarks" required>
                                         </div></div></div>
 
-<center><button class="button">Submit</button></center>
+<center><input type="submit" value="Add an Enquiry" class="btn-danger" name="submit"></center>
                                     </div>
 </form>
                                 </div>
