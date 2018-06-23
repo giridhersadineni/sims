@@ -7,10 +7,10 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Admin</h3> </div>
+                    <h3 class="text-primary">Online Enquiries</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Online Enquiries</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Enquiries</a></li>
                         <li class="breadcrumb-item active">Online Enquiries</li>
                     </ol>
                 </div>
@@ -80,7 +80,6 @@
   <input type="checkbox" name="course[]" value="PGDCA" > PGDCA<br>
   <input type="checkbox" name="course[]" value="CORE JAVA" > CORE JAVA<br>
   <input type="checkbox" name="course[]" value=" ADVANCED JAVA" > ADVANCED JAVA<br>
-  <input type="checkbox" name="course[]" value="CORE JAVA AND ADVANCED JAVA" > CORE JAVA AND ADVANCED JAVA<br>
   <input type="checkbox" name="course[]" value="ANDROID DEVELOPMENT" > ANDROID DEVELOPMENT<br>
   <input type="checkbox" name="course[]" value="WEB FRONT END BASICS HTML CSS JS" >WEB FRONT END BASICS HTML CSS JS<br>
   <input type="checkbox" name="course[]" value="WEB FRONT END BASICS WITH ANGULAR" >WEB FRONT END BASICS WITH ANGULAR<br>

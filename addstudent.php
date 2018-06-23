@@ -15,11 +15,11 @@ h3
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                    <h3 class="text-primary">Add Student</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Students</a></li>
+                        <li class="breadcrumb-item active">Add Student</li>
                     </ol>
                 </div>
             </div>
@@ -45,38 +45,36 @@ h3
                 <form action="checkpost.php" method="POST">
                             <div class="row p-t-20"><div class="col-md-6"><div class="form-group">
                             <p class="text-muted m-b-15 f-s-12"><h4>Student Firstname</h4></p>
-                            <input type="text" class="form-control input-focus " placeholder="Enter student firstname" name="sfname"></div></div>
+                            <input type="text" class="form-control input-focus " placeholder="firstname" name="sfname"></div></div>
                             <div class="col-md-6">
                             <div class="form-group">
 
                         <p class="text-muted m-b-15 f-s-12"><h4>Student Lastname</h4></p>
-                        <input type="text" class="form-control input-focus " placeholder="Enter student lastname">
+                        <input type="text" class="form-control input-focus " placeholder="lastname">
                     </div></div></div>
 
                                     <div class="row p-t-20">
-                                          <div class="col-md-6">
+                                          <div class="col-md-12">
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>Father Firstname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter Father's firstname"></div></div>
+                                            <input type="text" class="form-control input-focus " placeholder="father name"></div></div>
                                             <div class="col-md-6">
-                                         <div class="form-group">
-
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Father Lastname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter Father's lastname">
-                                        </div></div></div>
+                                         
+                                        </div>
+                                        </div>
 
 <div class="row p-t-20">
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Contact Number</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter contact"></div></div>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Phone Number</h4></p>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter phoneno"></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>Alternate Contact Number</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Enter Alt contact">
+                                            <input type="text" class="form-control input-focus" placeholder="Enter alternate phoneno">
                                         </div></div></div>
 <!--student name close-->
 
@@ -84,7 +82,7 @@ h3
                                       
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="enter your mail-id">
+                                            <input type="text" class="form-control input-focus" placeholder="enter your email">
                                         </div>
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>ADDRESS:</h4></p>

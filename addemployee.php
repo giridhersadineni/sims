@@ -65,11 +65,11 @@ $conn->close();
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                    <h3 class="text-primary">Add Employee</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                        <li class="breadcrumb-item active">Add Employee</li>
                     </ol>
                 </div>
             </div>
@@ -94,9 +94,9 @@ $conn->close();
                                 <h4 class="card-title"></h4>
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile8" role="tab"><span>1</span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profiles8" role="tab"><span>2</span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span>3</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile8" role="tab"><span>Person details</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profiles8" role="tab"><span>Contact details</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span>CV</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content tabcontent-border">
@@ -185,7 +185,7 @@ $conn->close();
                                             <p class="text-muted m-b-15 f-s-12"><h4>DOJ</h4></p>
                                             <input type="date" class="form-control input-focus " placeholder="dd/mm/yyyy" name="doj"  value="date" required></div></div>
                                             <ul  align="right" class="nav nav-tabs" role="tablist">
-                                         <li class="nav-item"> <a class="nav-link" align="right" data-toggle="tab" href="#profiles8" role="tab"><span align="right" class="button">Next</span></a> </li>
+                                         <li class="nav-item"> <a class="nav-link" align="right" data-toggle="tab" href="#profiles8" role="tab"></a> </li>
                                          </ul>
                                           <!--  <p align="right"> <button style="height:45px;width:85px" id="profile8" class="button">NEXT</button></p>-->
                                     
@@ -206,12 +206,12 @@ $conn->close();
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Contact Number</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Phone Number</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter contact" name="contactno" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Alternate Contact Number</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Alternate Phone Number</h4></p>
                                             <input type="text" class="form-control input-focus" placeholder="Enter Alt contact" name="altcontactno">
                                         </div></div></div>
 <!--student name close-->
@@ -226,20 +226,20 @@ $conn->close();
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>PanCard Number</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Enter PanCard..." name="pancardno" required>
+                                            <input type="text" class="form-control input-focus" placeholder="Enter Pan..." name="pancardno" required>
                                         </div></div></div>
                                       
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="enter your mail-id" name="email" required>
+                                            <input type="text" class="form-control input-focus" placeholder="enter your email" name="email" required>
                                         </div>
 
 <div class="form-group">
                                         <p class="text-muted m-b-15 f-s-12"> <h4>Employee Type</h4> </p>
                                         <select name="etype">
-    <option value="b1">emp1</option>
-    <option value="b2">emp2</option>
-    <option value="b3">emp3</option>
+    <option value="b1">Manager</option>
+    <option value="b2">Executive</option>
+    <option value="b3">Cashier</option>
      </select>
 </div>
 
@@ -299,7 +299,7 @@ $conn->close();
                                          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile8" role="tab"><span>Prev</span></a> </li>
                                          </ul> -->
                                          <ul class="nav nav-tabs" role="tablist">
-                                         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span class="button">Next</span></a> </li>
+                                         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"></a> </li>
                                          </ul>                            
  <!--<p align="center"> <button style="height:45px;width:85px" id="profile8" class="button">PREV</button>
  <button style="height:45px;width:85px" id="profile8" class="button">NEXT</button></p>-->

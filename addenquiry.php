@@ -3,11 +3,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary"></h3> </div>
+                    <h3 class="text-primary">Add Enquiry</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Enquiries</a></li>
+                        <li class="breadcrumb-item active">Add Enquiry</li>
                     </ol>
                 </div>
             </div>
@@ -145,21 +145,21 @@
                                          <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Contact Number</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter contact" name="contactno" required></div></div>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Phone Number</h4></p>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter phoneno" name="contactno" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>Alternate ContactNumber</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Enter Alt contact" name="altcontactno">
+                                            <input type="text" class="form-control input-focus" placeholder="Enter Alt phoneno" name="altcontactno">
                                         </div></div></div>
 <!--student name close-->
 
 
                                       
                                          <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Mail-id</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="enter your mail-id" name="mail-id" required >
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="enter your email" name="mail-id" required >
                                          </div>
                                          <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>ADDRESS:</h4></p>
@@ -198,7 +198,7 @@
                                         </div></div>
                                         <div class="col-md-6">
                                          <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>State:</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>State</h4></p>
                                             <input type="text" class="form-control input-focus" placeholder="state" name="state" required>
                                         </div></div>
                   
@@ -206,21 +206,24 @@
 <div class="row">
                                        <div class="col-md-6">
                                         <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Branch-id</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="branchid" name="branch-id">
-                                        </div></div></div>
-                                        <div class="row">
-                                       <div class="col-md-6">
-                                        <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Attended By</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="taken by" name="attendedby">
-                                        </div></div></div>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Branch Id</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="branch id" name="branch-id" required>
+                                        </div></div>
+                                        <div class="col-md-6">
+                                         <div class="form-group">
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Attended by</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="attended by" name="attendedby" required>
+                                        </div></div>
+                  
+</div>    
                                         <div class="row">
                                        <div class="col-md-12">
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Remarks</h4></p>
                                             <input type="text" class="form-control input-focus" placeholder="remarks" name="remarks" required>
-                                        </div></div></div>
+                                        </div>
+                                        </div>
+                                        </div>
 
 <center><button class="button">Submit</button></center>
                                     </div>
