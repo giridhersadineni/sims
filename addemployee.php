@@ -12,15 +12,64 @@ h3
     color:blue;
 }
 </style>
+
+<?php
+if(isset($_POST["submit"])){
+         echo '<h1>inside submit</h1>';
+     include 'config.php';
+$firstname=$_POST["empfname"];
+$lastname=$_POST["emplname"];
+$fathername=$_POST["fname"];
+$dob=$_POST["dob"];
+$age=$_POST["age"];
+$qualification=$_POST["qualification"];
+$designation=$_POST["designation"];
+$doj=$_POST["doj"];
+$contactno=$_POST["contactno"];
+$alternateno=$_POST["altcontactno"];
+$aadharno=$_POST["adharcardno"];
+$pancardno=$_POST["pancardno"];
+$emailid=$_POST["email"];
+$etype=$_POST["etype"];
+$branchid=$_POST["branchid"];
+$addressline1=$_POST["address1"];
+$street=$_POST["street"];
+$mandal=$_POST["mandal"];
+$district=$_POST["district"];
+$pincode=$_POST["pincode"];
+$state=$_POST["state"];
+$profile=$_POST["image"];
+$empresume=$_POST["file"];
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+
+if (!$conn){
+    echo '<script>alert("SERVER UNREACHABLE! CONTACT 9676211990")</script>';
+                header("Location:","error.php?error=".mysqli_connect_error);
+                
+}
+
+$sql = "INSERT INTO `employee` ( `firstname`, `lastname`, `fathername`, `dob`, `age`, `qualification`, `designation`, `doj`, `contactno`, `alternateno`, `aadharno`,`pancardno`,`emailid`, `addressline1`, `street`, `mandal`, `district`, `pincode`, `state`, `profile`, `empresume`) VALUES ('".$firstname."','".$lastname."','".$fathername."','".$dob."','".$age."','".$qualification."','".$designation."','".$doj."','".$contactno."','".$alternateno."','".$aadharno."','".$pancardno."','".$emailid."','".$addressline1."','".$street."','".$mandal."','".$district."','".$pincode."','".$state."','".$profile."','".$empresume."')";
+
+if ($conn->query($sql) === TRUE) {
+    echo '<script>alert("Added Employee Successfully");</script>';
+} 
+else {
+      echo '<script>alert("'.$sql."Error =".$conn->error.'");</script>';
+
+}
+$conn->close();
+}
+?>
+
  <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
+                    <h3 class="text-primary">Add Employee</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+                        <li class="breadcrumb-item active">Add Employee</li>
                     </ol>
                 </div>
             </div>
@@ -39,15 +88,15 @@ h3
 </center>
 
                             
-                            <div class="col-md-12">
+                            <div class="col-md-15">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title"></h4>
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile8" role="tab"><span>1</span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profiles8" role="tab"><span>2</span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span>3</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile8" role="tab"><span>Person details</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profiles8" role="tab"><span>Contact details</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span>CV</span></a> </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content tabcontent-border">
@@ -62,34 +111,29 @@ h3
 
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    <form action="addemployee.php" method="POST">
                                        
 <!--student name-->
 <div class="row p-t-20">
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>employee Firstname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter student firstname"></div></div>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Employee Firstname</h4></p>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter firstname" name="empfname" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>employee Lastname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter student lastname">
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Employee Lastname</h4></p>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter lastname" name="emplname" required>
                                         </div></div></div>
 <!--student name close-->
 <div class="row p-t-20">
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>father Firstname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter  firstname"></div></div>
-                                            <div class="col-md-6">
-                                         <div class="form-group">
-
-                                            <p class="text-muted m-b-15 f-s-12"><h4>father Lastname</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter  lastname">
-                                        </div></div></div>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Father Name</h4></p>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter name" name="fname" required></div></div>
+                                        </div>
 <!--student name-->
                                     
 <!--student name close-->
@@ -100,12 +144,12 @@ h3
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>DOB</h4></p>
-                                            <input type="date" class="form-control input-focus " placeholder="dd/mm/yyyy"></div></div>
+                                            <input type="date" class="form-control input-focus " placeholder="dd/mm/yyyy" name="dob" value="date" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>Age</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Enter Age">
+                                            <input type="text" class="form-control input-focus" placeholder="Enter Age" name="age" required >
                                         </div></div></div>
 <!--student name close-->
 <div class="row p-t-20">
@@ -139,9 +183,9 @@ h3
                                          <div class="form-group">
                                        
                                             <p class="text-muted m-b-15 f-s-12"><h4>DOJ</h4></p>
-                                            <input type="date" class="form-control input-focus " placeholder="dd/mm/yyyy"></div></div>
+                                            <input type="date" class="form-control input-focus " placeholder="dd/mm/yyyy" name="doj"  value="date" required></div></div>
                                             <ul  align="right" class="nav nav-tabs" role="tablist">
-                                         <li class="nav-item"> <a class="nav-link" align="right" data-toggle="tab" href="#profiles8" role="tab"><span align="right" class="button">Next</span></a> </li>
+                                         <li class="nav-item"> <a class="nav-link" align="right" data-toggle="tab" href="#profiles8" role="tab"></a> </li>
                                          </ul>
                                           <!--  <p align="right"> <button style="height:45px;width:85px" id="profile8" class="button">NEXT</button></p>-->
                                     
@@ -162,13 +206,13 @@ h3
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Contact Number</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter contact"></div></div>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Phone Number</h4></p>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter contact" name="contactno" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Alternate Contact Number</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Enter Alt contact">
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Alternate Phone Number</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="Enter Alt contact" name="altcontactno">
                                         </div></div></div>
 <!--student name close-->
 
@@ -177,31 +221,31 @@ h3
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>AadharCard Number</h4></p>
-                                            <input type="text" class="form-control input-focus " placeholder="Enter Aadhar..."></div></div>
+                                            <input type="text" class="form-control input-focus " placeholder="Enter Aadhar..." name="adharcardno" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
                                             <p class="text-muted m-b-15 f-s-12"><h4>PanCard Number</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Enter PanCard...">
+                                            <input type="text" class="form-control input-focus" placeholder="Enter Pan..." name="pancardno" required>
                                         </div></div></div>
                                       
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="enter your mail-id">
+                                            <input type="text" class="form-control input-focus" placeholder="enter your email" name="email" required>
                                         </div>
 
 <div class="form-group">
                                         <p class="text-muted m-b-15 f-s-12"> <h4>Employee Type</h4> </p>
-                                        <select name="emp">
-    <option value="b1">emp1</option>
-    <option value="b2">emp2</option>
-    <option value="b3">emp3</option>
+                                        <select name="etype">
+    <option value="b1">Manager</option>
+    <option value="b2">Executive</option>
+    <option value="b3">Cashier</option>
      </select>
 </div>
 
                                         <div class="form-group">
                                         <p class="text-muted m-b-15 f-s-12"> <h4>Branch Id</h4> </p>
-                                        <select name="cars">
+                                        <select name="branchid">
     <option value="b1">b1</option>
     <option value="b2">b2</option>
     <option value="b3">b3</option>
@@ -215,14 +259,14 @@ h3
                                        <div class="col-md-6">
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Address Line1</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Address Line1">
+                                            <input type="text" class="form-control input-focus" placeholder="Address Line1" name="address1" required>
                                           
                 
                                         </div></div>
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Street/Village/Area</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Street">
+                                            <input type="text" class="form-control input-focus" placeholder="Street" name="street" required>
                                         </div></div>
                                         </div>
                                        
@@ -230,31 +274,32 @@ h3
                                        <div class="col-md-6">
                                         <div class="form-group">
                                             <p class="text-muted m-b-15 f-s-12"><h4>Mandal</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Mandal">
+                                            <input type="text" class="form-control input-focus" placeholder="Mandal" name="mandal" required>
                                         </div></div>
                                         <div class="col-md-6">
                                         <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>City</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="City">
+                                            <p class="text-muted m-b-15 f-s-12"><h4>District</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="District" name="district" required>
                                         </div></div>
                                         </div>
-                                        <div class="row">
                                        <div class="col-md-6">
                                         <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>State</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="State">
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Pincode</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="Pincode" name="pincode">
                                         </div></div>
+                                        <div class="row">
                                         <div class="col-md-6">
                                         <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Pincode</h4></p>
-                                            <input type="text" class="form-control input-focus" placeholder="Pincode">
+                                            <p class="text-muted m-b-15 f-s-12"><h4>State</h4></p>
+                                            <input type="text" class="form-control input-focus" placeholder="State" name="state">
                                         </div></div>
+                                      
                                         </div>
                                        <!-- <ul class="nav nav-tabs" role="tablist">
                                          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile8" role="tab"><span>Prev</span></a> </li>
                                          </ul> -->
                                          <ul class="nav nav-tabs" role="tablist">
-                                         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span class="button">Next</span></a> </li>
+                                         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"></a> </li>
                                          </ul>                            
  <!--<p align="center"> <button style="height:45px;width:85px" id="profile8" class="button">PREV</button>
  <button style="height:45px;width:85px" id="profile8" class="button">NEXT</button></p>-->
@@ -262,11 +307,11 @@ h3
 <div class="tab-pane p-20" id="messages8" role="tabpanel">
 Upload employee's photo here:
 <br>
-<input type="file" multiple="false" accept="image/*" name="image">
+<input type="file" multiple="false" accept="image/*" name="image" >
 <br>
 <br>
 Upload employee's Resume here:<br>
-<input type="file" id="myFile">
+<input type="file" id="myFile" name="file">
 <br>
 <br>
 <!--<ul class="nav nav-tabs" role="tablist">
@@ -274,7 +319,7 @@ Upload employee's Resume here:<br>
                                          </ul>-->
 <!--<p align="left"> <button style="height:45px;width:85px" id="profile8" class="button">PREV</button></p>-->
 
-                                      <p align="right"> <button style="height:45px;width:85px" id="messages8" class="button">SUBMIT</button></p>
+<center><input type="submit" value="Add an Employee" class="btn-danger" name="submit"></center>
                                       </form></div>
                         </div>
                         
@@ -290,16 +335,3 @@ Upload employee's Resume here:<br>
             <!--end of page content-->
 
 <?php include "footer.php";?>
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
-Press h to open a hovercard with more details.
