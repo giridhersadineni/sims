@@ -1,4 +1,8 @@
 <?php include "header.php";?>
+
+
+
+
  <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="row page-titles">
@@ -20,42 +24,42 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="#" method="post">
+                                    <form class="form-valide" action="onlineenquirycheck.php" method="post">
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter a username..">
+                                                <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter a username..">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-email" name="val-email" placeholder="Your valid email..">
+                                                <input type="text" class="form-control" id="val-email" name="email" placeholder="Your valid email..">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-phoneus">Phone <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-phoneus" name="val-phoneus" placeholder="98*******">
+                                                <input type="text" class="form-control" id="val-phoneus" name="phone" placeholder="98*******">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Are you a student?<span class="text-danger">*</span></label>
+                                            <label class="col-lg-4 col-form-label" for="student">Are you a student?<span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-skill" name="val-skill">
+                                                <select class="form-control" id="val-skill" name="student">
                                                     <option value="">Please select</option>
-                                                    <option value="html">Yes</option>
-                                                    <option value="css">No</option>
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
                                                     </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Subscribed?<span class="text-danger">*</span></label>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Subscribed<span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-skill" name="val-skill">
+                                                <select class="form-control" id="val-skill" name="subscribed">
                                                     <option value="">Please select</option>
-                                                    <option value="html">Yes</option>
-                                                    <option value="css">No</option>
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
                                                     </select>
                                             </div>
                                         </div>
@@ -66,13 +70,13 @@
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-suggestions">Remarks <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="5" placeholder="What would you like to say?"></textarea>
+                                                <textarea class="form-control" id="val-suggestions" name="remarks" rows="5" placeholder="What would you like to say?"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                            <p class="text-muted m-b-15 f-s-12"><h4>Courses interested in</h4></p>
-                                           <input type="checkbox" name="courses" value="DIGITAL FOUNDATION COURSE">DIGITAL FOUNDATION COURSE<br>
-                <input type="checkbox" name="courses interested" value="Bike"> C C++<br>
+                                           <input type="checkbox" name="course[]" value="DIGITAL FOUNDATION COURSE">DIGITAL FOUNDATION COURSE<br>
+                <input type="checkbox" name="course[]" value="C C++"> C C++<br>
   <input type="checkbox" name="course[]" value="PGDCA" > PGDCA<br>
   <input type="checkbox" name="course[]" value="CORE JAVA" > CORE JAVA<br>
   <input type="checkbox" name="course[]" value=" ADVANCED JAVA" > ADVANCED JAVA<br>
@@ -93,23 +97,23 @@
 </div>
 
                                     <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Branch name<span class="text-danger">*</span></label>
+                                            <label class="col-lg-4 col-form-label" for="val-skill" >Branch name<span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-skill" name="val-skill">
+                                                <select class="form-control" id="branchname" name="branchname">
                                                     <option value="">Please select</option>
-                                                    <option value="html">B1</option>
-                                                    <option value="css">B2</option>
-                                                    <option value="css">B3</option>
+                                                    <option value="B1">B1</option>
+                                                    <option value="B2">B2</option>
+                                                    <option value="B3">B3</option>
                                                     </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-skill">Attended by<span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-skill" name="val-skill">
+                                                <select class="form-control" id="attendedby" name="attendedby">
                                                     <option value="">Please select</option>
-                                                    <option value="html">Employee</option>
-                                                    <option value="css">Admin</option>
+                                                    <option value="Employee">Employee</option>
+                                                    <option value="Admin">Admin</option>
                                                     </select>
                                             </div>
                                         </div>
