@@ -1,38 +1,33 @@
 <?php
-print_r($_POST);
-print_r($_POST["coursesinterested"]);
-include 'config.php';
+$servername = "localhost";
+$dbuser = "rajesh";
+$dbpwd = "rajesh@123";
+$dbname = "sims";
 
-$firstname=$_POST["sfname"];
-$lastname=$_POST["slname"];
-$fathername=$_POST["fname"];
-$student=$_POST["student"];
-$college=$_POST["clgname"];
-$qualification=$_POST["qualification"];
-$courseids=$_POST["courseid"];
-$doj=$_POST["intrddate"];
-$phoneno=$_POST["contactno"];
-$alternateno=$_POST["altcontactno"];
-$email=$_POST["mail-id"];
-$addressline1=$_POST["hno"];
-$addressline2=$_POST["street"];
+$firstname=$_POST["firstname"];
+$lastname=$_POST["lastname"];
+$fathername=$_POST["fathername"];
+$fatherphone=$_POST["fatherphone"];
+$phone=$_POST["phone"];
+$phonealt=$_POST["altphone"];
+$emailid=$_POST["mailid"];
+$branchid=$_POST["branchid"];
+$addressline1=$_POST["addressline1"];
+$addressline2=$_POST["addressline2"];
 $mandal=$_POST["mandal"];
-$district=$_POST["district"];
-$pincode=$_POST["pincode"];
+$city=$_POST["city"];
 $state=$_POST["state"];
-$attendedby=$_POST["attendedby"];
-$branchid=$_POST["branch-id"];
-$remarks=$_POST["remarks"];
-$courseinterested=implode(",",$_POST["coursesinterested"]);
-echo $courseinterested;
+$pincode=$_POST["pincode"];
+
+
 $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 
 if (!$conn){
     die("connection failed:".mysqli_connect_error());
 }
-echo $email;
-$sql = "INSERT INTO `enquiries` ( `firstname`, `lastname`, `fathername`, `student`, `college`, `qualifcation`, `courseids`, `courseinterested`, `doj`, `phoneno`, `alternateno`, `email`, `address line 1`, `address line 2`, `mandal`, `district`, `pincode`, `state`, `attendedby`, `branchid`, `remarks`) VALUES ('".$firstname."','".$lastname."','".$fathername."','".$student."','".$college."','".$qualification."',1,'".$courseinterested."','".$doj."','".$phoneno."','".$alternateno."','".$email."','".$addressline1."','".$addressline2."','".$mandal."','".$district."','".$pincode."','".$state."','attendedby',5,'remarks')";
 
+$sql = "INSERT INTO students (firstname, lastname,fathername,fatherphone,phonealt,phone,emailid,branchid,addressline1,addressline2, mandal,city,state,pincode)
+VALUES ('$firstname', '$lastname','$fathername','$fatherphone','$phone','$phonealt','$emailid','$branchid','$addressline1','$addressline2','$mandal','$city','$state','$pincode')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -43,4 +38,3 @@ else {
 
 $conn->close();
 ?>
-

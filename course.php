@@ -50,12 +50,12 @@ h3
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Course name</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Course name:</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter course name" name="name" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Branch id</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Branch id:</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter branch id" name="branchid" required>
                                         </div></div></div>
 <!--student name close-->
@@ -65,24 +65,24 @@ h3
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Category</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Category:</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter Category" name="category" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Type</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Type:</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter type" name="type" required>
                                         </div></div></div>
 <!--student name close-->  <div class="row p-t-20">
 <div class="col-md-6">
                                    
                                         <div class="form-group">
-                                     <p class="text-muted m-b-15 f-s-12"><h4>Description</h4></p>
+                                     <p class="text-muted m-b-15 f-s-12"><h4>Description:</h4></p>
                                        <textarea rows="3" cols="45" class="form-group input-focus" placeholder="Enter description" name="description" required></textarea>
                                         </div></div>
 
                                          <div class="form-group">
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Syllabus</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Syllabus:</h4></p>
                                        <textarea rows="3" cols="45" class="form-group input-focus" placeholder="Enter description" name="syllabus" required></textarea>
                                         </div>
 </div>
@@ -91,12 +91,12 @@ h3
                                           <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Duration</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Duration:</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter Duration" name="duration" required></div></div>
                                             <div class="col-md-6">
                                          <div class="form-group">
 
-                                            <p class="text-muted m-b-15 f-s-12"><h4>Fee</h4></p>
+                                            <p class="text-muted m-b-15 f-s-12"><h4>Fee:</h4></p>
                                             <input type="text" class="form-control input-focus " placeholder="Enter Fee" name="fee" required>
                                         </div></div></div>
 <!--stu

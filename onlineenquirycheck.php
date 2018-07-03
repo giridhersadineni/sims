@@ -1,8 +1,11 @@
 <?php
+$servername = "localhost";
+$dbuser = "rajesh";
+$dbpwd = "rajesh@123";
+$dbname = "sims";
 
 //if(isset($_POST["submit"]))
 {
-include 'config.php';
 
 $name=$_POST["name"];
 $email=$_POST["email"];

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
     <title>Dashboard-SKILLVERSE IMS</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -32,24 +32,24 @@
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
-        <!-- header header  -->
-        <div class="header">
-            <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                <!-- Logo -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">
-                        <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
-                    </a>
-                </div>
+  <!-- header header  -->
+ <div class="header">
+       <nav class="navbar top-navbar navbar-expand-md navbar-light">
+          <!-- Logo -->
+         <div class="navbar-header">
+    <a class="navbar-brand" href="index.php">
+     <!-- Logo icon -->
+   <b><img src="" alt="" class="dark-logo" /></b>
+             <!--End Logo icon -->
+             <!-- Logo text -->
+         <span><img src="images\pic1.png" alt="SKILLVERSE" class="dark-logo" style="width: 150px;"/></span>
+           </a>
+           
+          </div>
                 <!-- End Logo -->
                 <div class="navbar-collapse">
                     <!-- toggle and nav items -->
                     <ul class="navbar-nav mr-auto mt-md-0">
-                    
                         <!-- This is  -->
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
@@ -73,6 +73,7 @@
                                             <button type="submit" class="btn btn-info">Submit</button>
                                         </form>
                                     </li>
+
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
                                         <h4 class="m-b-20">List style</h4>
                                         <!-- List style -->
@@ -84,6 +85,7 @@
                                             <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
                                         </ul>
                                     </li>
+                                    
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
                                         <h4 class="m-b-20">List style</h4>
                                         <!-- List style -->
@@ -122,7 +124,7 @@
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+								<div class="notify"> <span class=""></span> <span class=""></span> </div>
 							</a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
@@ -170,8 +172,9 @@
                         <!-- End Comment -->
                         <!-- Messages -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+ <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <i class="fa fa-envelope"></i>
+					<div class="notify"> <span class=""></span> <span class=""></span> </div>
 							</a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
                                 <ul>
@@ -219,11 +222,11 @@
                         <!-- End Messages -->
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/tooltip/Euclid.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="#"><i class="ti-user"></i> Profile</a></li>
-                                    <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
+                                   
                                     <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
                                     <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
                                     <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>

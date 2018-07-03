@@ -1,6 +1,9 @@
 <?php
 
-include 'config.php';
+$servername = "localhost";
+$dbuser = "rajesh";
+$dbpwd = "rajesh@123";
+$dbname = "sims";
 
 $firstname=$_POST["sfname"];
 $lastname=$_POST["slname"];
@@ -24,13 +27,14 @@ $branchid=$_POST["branch-id"];
 $remarks=$_POST["remarks"];
 $courseinterested=implode(",",$_POST["coursesinterested"]);
 echo $courseinterested;
-$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 if (!$conn){
     die("connection failed:".mysqli_connect_error());
 }
 
-$sql = "INSERT INTO `enquiries` ( `firstname`, `lastname`, `fathername`, `student`, `college`, `qualifcation`, `courseids`, `courseinterested`, `doj`, `phoneno`, `alternateno`, `email`, `address line 1`, `address line 2`, `mandal`, `district`, `pincode`, `state`, `attendedby`, `branchid`, `remarks`) VALUES ('".$firstname."','".$lastname."','".$fathername."','".$student."','".$college."','".$qualification."',$student,'".$courseinterested."','".$doj."','".$phoneno."','".$alternateno."','".$email."','".$addressline1."','".$addressline2."','".$mandal."','".$district."','".$pincode."','".$state."','attendedby',5,'remarks')";
+$sql = "INSERT INTO `enquiries` ( `firstname`, `lastname`, `fathername`, `student`, `college`, `qualifcation`, `courseids`, `courseinterested`, `doj`, `phoneno`, `alternateno`, `email`, `address line 1`, `address line 2`, `mandal`, `district`, `pincode`, `state`, `attendedby`, `branchid`, `remarks`)
+ VALUES ('".$firstname."','".$lastname."','".$fathername."','".$student."','".$college."','".$qualification."',$student,'".$courseinterested."','".$doj."','".$phoneno."','".$alternateno."','".$email."','".$addressline1."','".$addressline2."','".$mandal."','".$district."','".$pincode."','".$state."','attendedby',5,'remarks')";
 
 
 if ($conn->query($sql) === TRUE) {

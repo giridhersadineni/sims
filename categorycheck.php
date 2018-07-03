@@ -1,18 +1,12 @@
 <?php
-
 $servername = "localhost";
 $dbuser = "rajesh";
 $dbpwd = "rajesh@123";
 $dbname = "sims";
 
+
 $name=$_POST['name'];
-$branchid=$_POST["branchid"];
-$category=$_POST["category"];
-$type=$_POST["type"];
-$description=$_POST["description"];
-$syllabus=$_POST["syllabus"];
-$duration=$_POST["duration"];
-$fee=$_POST["fee"];
+$description=$_POST['description'];
 
 
 $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
@@ -21,8 +15,8 @@ if (!$conn){
     die("connection failed:".mysqli_connect_error());
 }
 
-$sql = "INSERT INTO m_courses (name, branchid,category,type, description,syllabus,duration,fee)
-VALUES ('$name', '$branchid','$category','$type','$description','$syllabus','$duration','$fee')";
+$sql = "INSERT INTO coursecategory (name, description)
+VALUES ('$name', '$description')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
