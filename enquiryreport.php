@@ -1,22 +1,18 @@
 <?php include "header.php";?>
 <?php
-$servername = "localhost";
-$dbuser = "rajesh";
-$dbpwd = "rajesh@123";
-$dbname = "sims";
-//connection 
-$conn = new mysqli($servername, $dbuser, $dbpwd, $dbname);
+include "config.php";
 //check connection
+
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 if ($conn->connect_error){
     die("connection failed:".mysqli_connect_error());
 }
 else{
-    $sql = "select * from students";
+    $sql = "select * from enquiries";
     $result = $conn->query($sql);
 
 }
 ?>
-
 <!-- End Left Sidebar  -->
 <!-- Page wrapper  -->
 <div class="page-wrapper">
@@ -27,7 +23,7 @@ else{
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">Student Details</li>
+<li class="breadcrumb-item active">Enquiry Table</li>
 </ol>
 </div>
 </div>
@@ -39,34 +35,32 @@ else{
 <div class="col-12">
 <div class="card">
 <div class="card-body">
-<h4 class="card-title">Student Table</h4>
+<h4 class="card-title">Enquiry Report</h4>
 <div class="table-responsive m-t-40">
 <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 <thead>
 <tr>
-<th>Id</th>
-<th>First name</th>
-<th>Last name</th>
-<th>Father name</th>
-<th>Phone</th>
-<th>father Phone</th>
-<th>Phone</th>
-<th>Phonealt</th>
-<th>Email</th>
+<th>Enquiry Id</th>
+<th>Name</th>
+<th>last name</th>
+<th>father name</th>
+<th>Graducation</th>
+<th>phone</th>
+<th>email</th>
+<th>interested date of joining</th>
+<th>Actions</th>
 
 </tr>
 </thead>
-
-
 <?php
-
-
 if ($result->num_rows > 0) {
     // output data of each row
 while($row = mysqli_fetch_assoc($result)) {
 echo "<tr>";
-echo "<td><a href='viewstudent.php?id=". $row["sid"]."'>".$row["sid"]."</a></td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" .$row["fathername"]. "</td><td>" . $row["fatherphone"]. "</td><td>" . $row["phone"]. "</td><td>" . $row["phonealt"]."</td><td>" . $row["emailid"]."</td>";
-echo "</tr>";
+echo "<td><a href='enquirydetails.php?id=". $row["enquiryid"]."'>".$row["enquiryid"]."</a></td><td>".$row["firstname"]."</td><td>" .$row["lastname"]. "</td><td>" .$row["fathername"]. "</td><td>" . $row["qualification"]. "</td><td>" . $row["contactdetails"]. "</td><td>" . $row["email"]."</td><td>" . $row["doj"]."</td>";
+
+echo '<td><a href="enquirydetails.php?id='.$row["enquiryid"].'" class="btn btn-success">View</a></td></tr>';
+
     }
 } else {
     echo '<tr><td colspan="5">No Branches - Empty Table</td></tr>';
@@ -78,6 +72,11 @@ mysqli_close($conn);
 
 ?> 
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!-- End PAge Content -->
 </div>
 <!-- End Container fluid  -->

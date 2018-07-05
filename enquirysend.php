@@ -20,6 +20,11 @@
             $branchid=$_POST["branch-id"];
             $remarks=$_POST["remarks"];
 
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+
+if (!$conn){
+                die("connection failed:".mysqli_connect_error());
+            }
 $sql = "INSERT INTO enquiries ( firstname, lastname, fathername, student,contactdetails,doj,college, qualification, attendedby,branchid,remarks, addressline1, addressline2,alternateno,email, mandal, district, pincode, state) 
 VALUES ('$firstname','$lastname','$fathername','$student','$contactdetails','$doj','$college','$qualification','$attendedby','$branchid','$remarks','$addressline1','$addressline2','$alternateno','$email','$mandal','$district','$pincode','$state')";
 

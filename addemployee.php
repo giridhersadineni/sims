@@ -1,4 +1,3 @@
-
 <?php include "header.php";?>
 <head>
 <style>
@@ -12,100 +11,47 @@ h3
     color:blue;
 }
 </style>
-
-<?php
-if(isset($_POST["submit"])){
-         echo '<h1>inside submit</h1>';
-     include 'config.php';
-$firstname=$_POST["empfname"];
-$lastname=$_POST["emplname"];
-$fathername=$_POST["fname"];
-$dob=$_POST["dob"];
-$age=$_POST["age"];
-$qualification=$_POST["qualification"];
-$designation=$_POST["designation"];
-$doj=$_POST["doj"];
-$contactno=$_POST["contactno"];
-$alternateno=$_POST["altcontactno"];
-$aadharno=$_POST["adharcardno"];
-$pancardno=$_POST["pancardno"];
-$emailid=$_POST["email"];
-$etype=$_POST["etype"];
-$branchid=$_POST["branchid"];
-$addressline1=$_POST["address1"];
-$street=$_POST["street"];
-$mandal=$_POST["mandal"];
-$district=$_POST["district"];
-$pincode=$_POST["pincode"];
-$state=$_POST["state"];
-$profile=$_POST["image"];
-$empresume=$_POST["file"];
-$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
-
-if (!$conn){
-    echo '<script>alert("SERVER UNREACHABLE! CONTACT 9676211990")</script>';
-                header("Location:","error.php?error=".mysqli_connect_error);
-                
-}
-
-$sql = "INSERT INTO `employee` ( `firstname`, `lastname`, `fathername`, `dob`, `age`, `qualification`, `designation`, `doj`, `contactno`, `alternateno`, `aadharno`,`pancardno`,`emailid`, `addressline1`, `street`, `mandal`, `district`, `pincode`, `state`, `profile`, `empresume`) 
-VALUES ('".$firstname."','".$lastname."','".$fathername."','".$dob."','".$age."','".$qualification."','".$designation."','".$doj."','".$contactno."','".$alternateno."','".$aadharno."','".$pancardno."','".$emailid."','".$addressline1."','".$street."','".$mandal."','".$district."','".$pincode."','".$state."','".$profile."','".$empresume."')";
-
-if ($conn->query($sql) === TRUE) {
-    echo '<script>alert("Added Employee Successfully");</script>';
-} 
-else {
-      echo '<script>alert("'.$sql."Error =".$conn->error.'");</script>';
-
-}
-$conn->close();
-}
-?>
-
- <div class="page-wrapper">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Add Employee</h3> </div>
-                <div class="col-md-7 align-self-center">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
-                        <li class="breadcrumb-item active">Add Employee</li>
-                    </ol>
-                </div>
-            </div>
+<div class="page-wrapper">
+<!-- Bread crumb -->
+<div class="row page-titles">
+<div class="col-md-5 align-self-center">
+<h3 class="text-primary">Add Employee</h3> </div>
+<div class="col-md-7 align-self-center">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="javascript:void(0)">Admin</a></li>
+<li class="breadcrumb-item active">Add Employee</li>
+</ol>
+</div>
+</div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
-            <div class="container-fluid">
+<div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
-                    <div class="col-lg-12">
-                    <div class="card card-outline-primary">
-                            <center>
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">EMPLOYEE REGISTRATION FORM</h4>
-</div>
-                            
+<div class="row">
+<div class="col-lg-12">
+<div class="card card-outline-primary">
+<center>
+<div class="card-header">
+<h4 class="m-b-0 text-white">EMPLOYEE REGISTRATION FORM</h4>
+</div>                           
 </center>
-
-                            
-                            <div class="col-md-15">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title"></h4>
-                                <!-- Nav tabs -->
+                           
+<div class="col-md-15">
+<div class="card">
+<div class="card-body">
+<h4 class="card-title"></h4>
+<!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile8" role="tab"><span>Person details</span></a> </li>
-<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profiles8" role="tab"><span>Contact details</span></a> </li>
-<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"><span>CV</span></a> </li>
 </ul>
 <!-- Tab panes -->
 <div class="tab-content tabcontent-border">
-<div class="tab-pane active" id="profile8" role="tabpanel">
+<div class="tab-pane active" id="employee" role="tabpanel">
 <div class="p-100">
 <div class="card-body">
 <div class="basic-form">
-<form action="addemployee.php" method="POST">                            
+
+
+<form action="employeedetails.php" method="POST">                            
 <!--student name-->
 <div class="row p-t-20">
 <div class="col-md-6">
@@ -134,6 +80,7 @@ $conn->close();
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>DOB</h4></p>
 <input type="date" class="form-control input-focus " placeholder="dd/mm/yyyy" name="dob" value="date" required></div></div>
+
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Age</h4></p>
@@ -154,11 +101,11 @@ $conn->close();
 </div>                 
 <div class="form-group">
 <label>Designation :</label>
-<select class="form-control" >
+<select class="form-control" name="designation">
 <option selected>--Select--</option>
-<option value="admin">Admin</option>
-<option value="recptionist">recptionist</option>
-<option value="cashier">Cashier</option>
+<option value="designation">Admin</option>
+<option value="designation">recptionist</option>
+<option value="designation">Cashier</option>
 >
 </select>
 </div></div>
@@ -170,12 +117,13 @@ $conn->close();
 <li class="nav-item"> <a class="nav-link" align="right" data-toggle="tab" href="#profiles8" role="tab"></a> </li>
 </ul>
 
-<!--  <p align="right"> <button style="height:45px;width:85px" id="profile8" class="button">NEXT</button></p>-->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#employee2" role="tab"><span>Next</span></a> </li></ul>
 </div>
 </div>
 </div>
 </div>
-<div class="tab-pane  p-20" id="profiles8" role="tabpanel">
+<div class="tab-pane  p-20" id="employee2" role="tabpanel">
 <div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">
@@ -212,9 +160,9 @@ $conn->close();
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"> <h4>Branch Id</h4> </p>
 <select name="branchid">
-<option value="b1">b1</option>
-<option value="b2">b2</option>
-<option value="b3">b3</option>
+<option value="branchid">b1</option>
+<option value="branchid">b2</option>
+<option value="branchid">b3</option>
 </select>
 </div>
 <div class="form-group">
@@ -229,7 +177,7 @@ $conn->close();
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Street/Village/Area</h4></p>
-<input type="text" class="form-control input-focus" placeholder="Street" name="street" required>
+<input type="text" class="form-control input-focus" placeholder="Street" name="address2" required>
 </div></div>
 </div>
 <div class="row">
@@ -256,16 +204,18 @@ $conn->close();
 <input type="text" class="form-control input-focus" placeholder="State" name="state">
 </div></div>
 </div>
+<ul class="nav nav-tabs" role="tablist" align="center">
+<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#employee" role="tab"><span>Previous</span></a> </li></ul>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#employee3" role="tab"><span>Next</span></a> </li></ul>
 <!-- <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile8" role="tab"><span>Prev</span></a> </li>
 </ul> -->
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages8" role="tab"></a> </li>
-</ul>                            
+                           
  <!--<p align="center"> <button style="height:45px;width:85px" id="profile8" class="button">PREV</button>
  <button style="height:45px;width:85px" id="profile8" class="button">NEXT</button></p>-->
  </div>
-<div class="tab-pane p-20" id="messages8" role="tabpanel">
+<div class="tab-pane p-20" id="employee3" role="tabpanel">
 Upload employee's photo here:
 <br>
 <input type="file" multiple="false" accept="image/*" name="image" >
@@ -275,6 +225,7 @@ Upload employee's Resume here:<br>
 <input type="file" id="myFile" name="file">
 <br>
 <br>
+
 <!--<ul class="nav nav-tabs" role="tablist">
 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profiles8" role="tab"><span>Prev</span></a> </li>
 </ul>-->

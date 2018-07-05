@@ -39,7 +39,7 @@ h3
                             
 <div class="card-body">
 <div class="basic-form">
-<form action="branchid.php" method="POST">
+<form action="branchdetails.php" method="POST">
      <div class="row p-t-20"><div class="col-md-6"><div class="form-group">
          <p class="text-muted m-b-15 f-s-12"><h4>Branch name</h4></p>
       <input type="text" class="form-control input-focus " placeholder="Enter branch " name="branchname"></div></div>

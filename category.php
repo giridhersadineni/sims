@@ -23,14 +23,12 @@
   </center><br>
 <div class="card-body">
 <div class="basic-form">
-<form action="categorycheck.php" method="POST">
+<form action="categorydetails.php" method="POST">
 
 <div class="form-group">
 <label for="name">Name:</label>
 <input type="text" class="form-control" id="name" placeholder="Enter Category Name" name="name">
 </div>
-
-
 <div class="form-group">
 <label for="dsp">Description:</label><br>
 <textarea rows="10"cols="70" class="form" id="dsp" name="description"></textarea>

@@ -7,7 +7,7 @@
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">Dashboard</li>
+<li class="breadcrumb-item active">enquiry form</li>
 </ol>
 </div>
 </div>
@@ -39,6 +39,7 @@
 <div class="p-100">
 <div class="card-body">
 <div class="basic-form">
+
 <form action="enquirysend.php" method="post">
 <div class="row p-t-20">
 <div class="col-md-6">
@@ -63,8 +64,8 @@
 </div></div></div>
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4> Are you a student?</h4></p>
-<input type="radio" name="student" value="1">Yes</input><br>
-<input type="radio" name="student" value="0">No</input>
+<input type="radio" name="student" value="yes">Yes</input><br>
+<input type="radio" name="student" value="No">No</input>
 </div>
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"> <h4>College Name</h4> </p>
@@ -91,7 +92,8 @@
 
 
  </div>
-</div>                                                                                                 
+</div>   
+
 <div class="tab-pane  p-20" id="Student2" role="tabpanel">
 <div class="form-group">
 <div class="row">
@@ -121,6 +123,8 @@
   <input type="checkbox" name="courseinterested" value="hardware" >COMPUTER HARDWARE AND NETWORKING<br>
   <input type="checkbox" name="courseinterested" value="pentesting" >PENTESTING <br>
 </div><br>
+
+
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Interested Date of joining</h4></p>
 <input type="date" name="doj" value=""><br>

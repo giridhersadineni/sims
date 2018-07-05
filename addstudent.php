@@ -15,11 +15,11 @@ h3
 <!-- Bread crumb -->
 <div class="row page-titles">
 <div class="col-md-5 align-self-center">
-<h3 class="text-primary">Dashboard</h3> </div>
+<h3 class="text-primary">Student Registration </h3> </div>
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">Dashboard</li>
+<li class="breadcrumb-item active">student Registration</li>
 </ol>
 </div>
 </div>
@@ -35,16 +35,14 @@ h3
 <h4 class="m-b-0 text-white">STUDENT REGISTRATION </h4>
 </div>
 </center>
-
-                            
 <div class="card-body">
 <div class="basic-form">
 <form action="checkpost.php" method="POST">
-     <div class="row p-t-20"><div class="col-md-6"><div class="form-group">
-         <p class="text-muted m-b-15 f-s-12"><h4>Student Firstname</h4></p>
-      <input type="text" class="form-control input-focus " placeholder="Enter student firstname" name="firstname"></div></div>
-        <div class="col-md-6">
-      <div class="form-group">
+<div class="row p-t-20"><div class="col-md-6"><div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>Student Firstname</h4></p>
+<input type="text" class="form-control input-focus " placeholder="Enter student firstname" name="firstname"></div></div>
+<div class="col-md-6">
+<div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Student Lastname</h4></p>
 <input type="text" class="form-control input-focus " placeholder="Enter student lastname" name="lastname">
 </div></div></div>
@@ -61,30 +59,41 @@ h3
 
 <div class="row p-t-20">
 <div class="col-md-6">
-    <div class="form-group">
-      <p class="text-muted m-b-15 f-s-12"><h4>Contact Number</h4></p>
-      <input type="text" class="form-control input-focus " placeholder="Enter contact" name="phone"></div></div>
-     <div class="col-md-6">
-        <div class="form-group">
-                <p class="text-muted m-b-15 f-s-12"><h4>Alternate Contact Number</h4></p>
-             <input type="text" class="form-control input-focus" placeholder="Enter Alt contact" name="altphone">
-       </div></div></div>
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>Contact Number</h4></p>
+<input type="text" class="form-control input-focus " placeholder="Enter contact" name="phone"></div></div>
+<div class="col-md-6">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>Branch id</h4></p>
+<input type="text" class="form-control input-focus" placeholder="Enter Branch id" name="branchid">
+</div> </div>
+</div>
 <!--student name close-->
 
 <div class="row p-t-20">
+<div class="col-md-12">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
+<input type="email" class="form-control input-focus" placeholder="enter your mail-id" name="mailid">
+</div></div>
+ </div>
+<div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">
-         <p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
-      <input type="email" class="form-control input-focus" placeholder="enter your mail-id" name="mailid">
-       </div></div>
-    <div class="col-md-6">
-   <div class="form-group">
-     <p class="text-muted m-b-15 f-s-12"><h4>Branch id</h4></p>
-     <input type="text" class="form-control input-focus" placeholder="Enter Branch id" name="branchid">
-           </div> </div> </div>
-           <p class="text-muted m-b-15 f-s-12"><h4>ADDRESS:</h4></p>
+<p class="text-muted m-b-15 f-s-12"><h4>Date Of Birth</h4></p>
+<input type="date" class="form-control input-focus" placeholder="Enter Date of birth" name="dob">
+</div> 
+</div> <br><br>
+<div class="col-md-6">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4> Gender</h4></p>
+<input type="radio" name="gender" value="Male">Male</input><br>
+<input type="radio" name="gender" value="Female">Female</input>
+</div>
+</div>
   </div>
-       <div class="row">
+  <p class="text-muted m-b-15 f-s-12"><h4>ADDRESS:</h4></p>
+  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
  <p class="text-muted m-b-15 f-s-12"><h4>Address Line1</h4></p>
@@ -112,31 +121,30 @@ h3
  </div>
 </div>
 </div>
-     <div class="row">
-        <div class="col-md-6">
-           <div class="form-group">
-   <p class="text-muted m-b-15 f-s-12"><h4>State</h4></p>
-        <input type="text" class="form-control input-focus" placeholder="State" name="state">
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>State</h4></p>
+<input type="text" class="form-control input-focus" placeholder="State" name="state">
 </div>
 </div>
-       <div class="col-md-6">
-       <div class="form-group">
-      <p class="text-muted m-b-15 f-s-12"><h4>Pincode</h4></p>
-  <input type="text" class="form-control input-focus" placeholder="Pincode" name="pincode">
-   </div>
+<div class="col-md-6">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>Pincode</h4></p>
+<input type="text" class="form-control input-focus" placeholder="Pincode" name="pincode">
 </div>
 </div>
-                              
-  <br>                     
-   <p align="right"> <input type="submit" class="button" value="Add ">
-                </div>
-           </div>
-         </div>
-             </div>
-             <!-- /# card -->
-     </div>
-        <!-- /# column -->
-     </div>
-            <!--end of page content-->
+</div>
+<br>                     
+<p align="right"> <input type="submit" class="button" value="Add ">
+</div>
+</div>
+</div>
+</div>
+<!-- /# card -->
+</div>
+<!-- /# column -->
+</div>
+<!--end of page content-->
 
 <?php include "footer.php";?>
