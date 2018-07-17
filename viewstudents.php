@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!(isset($_SESSION['login'])))
+{
+    header("location:index.php?sessionexpired");
+}
+?>
+
 <?php include "header.php";?>
 <?php
 include "config.php";
@@ -13,6 +21,7 @@ else{
 ?>
 
 <!-- End Left Sidebar  -->
+
 <!-- Page wrapper  -->
 <div class="page-wrapper">
 <!-- Bread crumb -->

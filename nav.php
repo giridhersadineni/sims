@@ -35,7 +35,7 @@
 <ul aria-expanded="false" class="collapse">
 <li><a href="addemployee.php"><i class="fa fa-user"></i>  Add Employee</a></li>
 <li><a href="branch.php"><i class="fa fa-university"></i>  Add Branch</a></li>
-
+<li><a href="addadmin.php"><i class="fa fa-edit"></i> Add Admin</a></li>
 </ul>
 </li>
 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-asterisk"></i><span class="hide-menu">Masters</span></a>

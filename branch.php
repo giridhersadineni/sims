@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if(!(isset($_SESSION['login'])))
+{
+    header("location:index.php?sessionexpired");
+}
+?>
+
+
+
 <?php include "header.php";?>
 <head>
 <style>
@@ -34,9 +44,7 @@ h3
 <div class="card-header">
 <h4 class="m-b-0 text-white">Branch Details</h4>
 </div>
-</center>
-
-                            
+</center>                  
 <div class="card-body">
 <div class="basic-form">
 <form action="branchdetails.php" method="POST">

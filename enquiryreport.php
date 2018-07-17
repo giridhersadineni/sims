@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if(!(isset($_SESSION['login'])))
+{
+    header("location:index.php?sessionexpired");
+}
+?>
+
+
+
 <?php include "header.php";?>
 <?php
 include "config.php";
@@ -28,6 +38,7 @@ else{
 </div>
 </div>
 <!-- End Bread crumb -->
+
 <!-- Container fluid  -->
 <div class="container-fluid">
 <!-- Start Page Content -->

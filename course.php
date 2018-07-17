@@ -1,4 +1,12 @@
+<?php 
+session_start();
+if(!(isset($_SESSION['login'])))
+{
+    header("location:index.php?sessionexpired");
+}
+?>
 <?php include "header.php";?>
+<html>
 <head>
 <style>
 .button
@@ -11,18 +19,31 @@ h3
 color:blue;
 }
 </style>
+
+
  <div class="page-wrapper">
 <!-- Bread crumb -->
 <div class="row page-titles">
 <div class="col-md-5 align-self-center">
-<h3 class="text-primary">Dashboard</h3> </div>
+<h3 class="text-primary">Add Course</h3> </div>
 <div class="col-md-7 align-self-center">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-<li class="breadcrumb-item active">Dashboard</li>
+<li class="breadcrumb-item active">Course</li>
 </ol>
 </div>
 </div>
+</head>
+
+<?php
+include('login.php');//include login script
+ 
+if(isset($_SESSION['login']))
+{
+    header ("location:dashboard.php");
+}
+?>
+
 <!-- End Bread crumb -->
 <!-- Container fluid  -->
 <div class="container-fluid">
@@ -98,5 +119,5 @@ color:blue;
 <!-- /# column -->
 </div>
 <!--end of page content-->
-
+</html>
 <?php include "footer.php";?>

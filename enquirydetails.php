@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!(isset($_SESSION['login'])))
+{
+    header("location:index.php?sessionexpired");
+}
+?>
 <?php include "header.php";?>
 <?php
 include "config.php";
@@ -20,6 +27,8 @@ break;
 }
 ?>
 <!--Profile Pic-->
+
+
 <?php
    if(isset($_POST['picsubmitted'])){
     
@@ -163,6 +172,8 @@ h3
 <div class="modal-footer">
 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 <input type="submit" class="btn btn-success" value="Upload Photo" name="picsubmitted">
+
+
 </form>
 </div>       
 </div>
