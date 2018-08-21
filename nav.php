@@ -41,7 +41,9 @@
 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-asterisk"></i><span class="hide-menu">Masters</span></a>
 <ul aria-expanded="false" class="collapse">
 <li><a href="category.php"><i class="fa fa-edit"></i> Add CourseCategory</a></li>
+<li><a href="viewcategory.php"> <i class="fa fa-list"></i> View category</a></li>
 <li><a href="course.php"><i class="fa fa-edit"></i>  Add course</a></li>
+<li><a href="viewcourse.php"> <i class="fa fa-th-list"></i> View Course</a></li>
 </ul>
 </li>
 </ul>

@@ -20,6 +20,22 @@ else{
 
 }
 ?>
+
+<!--another connection-->
+<?php
+include "config.php";
+//check connection
+
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+if ($conn->connect_error){
+    die("connection failed:".mysqli_connect_error());
+}
+else{
+    $sql = "select * from coursecategory";
+    $result = $conn->query($sql);
+
+}
+?>
 <?php include "header.php";?>
  <div class="page-wrapper">
 <!-- Bread crumb -->
@@ -172,6 +188,18 @@ else{
   <p class="text-muted m-b-15 f-s-12"><h4>Course Details</h4></p>
   <select name="courseinterested" class="form-control input-focus">
     <option value="choose">--Select--</option>
+
+    <?php
+    while($row = mysqli_fetch_assoc($result)) 
+     {
+      ?>
+      
+<option name="id" value="<?php echo $row{"id"} ?>"> <?php echo $row{"name"} ?> </option>
+  <?php
+  }
+  ?>
+ 
+    <!--
     <option name="courseinterested" value="course">DIGITAL FOUNDATION COURSE</option>
     <option name="courseinterested" value="course">C C++</option>
     <option name="courseinterested" value="pgdca" > PGDCA</option>
@@ -188,7 +216,8 @@ else{
     <option name="courseinterested" value="testing" >TESTING TOOLS SELENIUM & JMETER</option>
     <option name="courseinterested" value="it" >IT CAREER ACCELERATOR</option>
     <option name="courseinterested" value="cse" >CSE PROJECTS</option>
-    <option name="courseinterested" value="hardware" >COMPUTER HARDWARE AND NETWORKING</option>
+    <option name="courseinterested" value="hardware" >COMPUTER HARDWARE AND NETWORKING</option>-->
+
   </select>
   </div>
 </div>

@@ -35,14 +35,7 @@ color:blue;
 </div>
 </head>
 
-<?php
-include('login.php');//include login script
- 
-if(isset($_SESSION['login']))
-{
-    header ("location:dashboard.php");
-}
-?>
+
 
 <!-- End Bread crumb -->
 <!-- Container fluid  -->
