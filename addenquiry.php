@@ -168,14 +168,14 @@ else{
 <p class="text-muted m-b-15 f-s-12"><h4>Coursecategory</h4>
     <select name="category"  id="category" class="form-control input-focus">
       <option value="choose">--Select--</option>
-<?php
+  <?php
     while($row = mysqli_fetch_assoc($courseresults)) 
      {
-?>
-<option name="id" value="<?php echo $row{"id"} ?>"> <?php echo $row{"name"} ?> </option>
-<?php
+    ?>
+  <option name="id" value="<?php echo $row{"id"} ?>"> <?php echo $row{"name"} ?> </option>
+    <?php
   }
-?>
+  ?>
 
 </select>
   </div> 
@@ -206,12 +206,16 @@ else{
         xhr.open('GET', url, true);
         xhr.onreadystatechange = function () {
           if(xhr.readyState == 4 && xhr.status == 200) {
-            console.log(xhr.responseText);
+              console.log(xhr.responseText);
+              document.getElementById('cat_select').innerHTML="";
              var Courses=JSON.parse(xhr.responseText);
              Courses.forEach(element => {
-              document.getElementById('cat_select').innerHTML+='<option name='+element["courseid"]+'" value="'+element["coursename"]+'"></option>"';
+              document.getElementById('cat_select').innerHTML+='<option name='+element.coursename+'" value="'+element.coursename+'">'+element.coursename+'</option>"';
              });
-              }
+            
+            }
+
+      
         }
         xhr.send();
       }
