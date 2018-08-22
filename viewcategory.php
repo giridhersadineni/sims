@@ -46,6 +46,7 @@ else{
 <h4 class="card-title">Student Table</h4>
 <div class="table-responsive m-t-40">
 <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+<p align="right">  <a href="category.php" class="btn btn-info" role="button">Add Category</a></p>
 <thead>
 <tr>
 <th>Category ID</th>

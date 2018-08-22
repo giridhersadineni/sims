@@ -147,7 +147,7 @@ h3
 </div>
 </div>
 <br>                     
-<p align="right"> <input type="submit" class="button" value="Add ">
+<p align="right"> <input type="submit" class="button" value="Add "></p>
 </div>
 </div>
 </div>
