@@ -8,7 +8,7 @@
             $qualification=$_POST["qualification"];
             $contactdetails=$_POST["contactno"];
             $doj=$_POST["doj"];
-            $courseids=$_POST["courseids"];        
+            
             $email=$_POST["mail"];
             $addressline1=$_POST["hno"];
             $addressline2=$_POST["street"];
@@ -20,15 +20,15 @@
             $attendedby=$_POST["attendedby"];
             $branchid=$_POST["branchid"];
             $remarks=$_POST["remarks"];
-            $forwardon=$_POST["forwardon"];
+            $forwardon=$_POST["follow"];
 
 $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 
 if (!$conn){
                 die("connection failed:".mysqli_connect_error());
             }
-$sql = "INSERT INTO enquiries ( firstname, lastname, fathername, student,contactdetails,doj,courseids,college, qualification, attendedby,branchid,remarks, addressline1, addressline2,alternateno,email, mandal, district, pincode, state,forwardon) 
-VALUES ('$firstname','$lastname','$fathername','$student','$contactdetails','$doj','$courseids','$college','$qualification','$attendedby','$branchid','$remarks','$addressline1','$addressline2','$alternateno','$email','$mandal','$district','$pincode','$state','$forwardon')";
+$sql = "INSERT INTO enquiries ( firstname, lastname, fathername, student,contactdetails,doj,college, qualification, attendedby,branchid,remarks, addressline1, addressline2,alternateno,email, mandal, district, pincode, state,forwardon) 
+VALUES ('$firstname','$lastname','$fathername','$student','$contactdetails','$doj','$college','$qualification','$attendedby','$branchid','$remarks','$addressline1','$addressline2','$alternateno','$email','$mandal','$district','$pincode','$state','$forwardon')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
