@@ -7,7 +7,9 @@ if(!(isset($_SESSION['login'])))
 ?>
 
 <?php
-if(isset($_POST['submit'])){
+
+if(isset($_POST['submit']))
+{
 include "config.php";
     $branchname=$_POST['branchname'];
 $address=$_POST['address'];

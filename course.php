@@ -5,6 +5,25 @@ if(!(isset($_SESSION['login'])))
     header("location:index.php?sessionexpired");
 }
 ?>
+
+
+<?php
+include "config.php";
+//check connection
+
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+if ($conn->connect_error){
+    die("connection failed:".mysqli_connect_error());
+}
+else{
+    $sql = "select * from m_coursetype";
+    $result = $conn->query($sql);
+ 
+    $coursequery="select * from coursecategory";
+    $courseresults= $conn->query($coursequery);
+}
+?>
+
 <?php include "header.php";?>
 <html>
 <head>
@@ -50,47 +69,64 @@ color:blue;
 <h4 class="m-b-0 text-white">COURSE FORM</h4>
 </div>
 
-</center>                           
+</center>   
+
 <div class="card-body">
 <div class="basic-form">
 <form action="coursedetails.php" method="POST">
 <!--student name-->
+
 <div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Course name:</h4></p>
-<input type="text" class="form-control input-focus " placeholder="Enter course name" name="name" required></div></div>
+<input type="text" class="form-control input-focus " placeholder="Enter course name" name="name" required>
+</div></div>
+
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Branch id:</h4></p>
 <input type="text" class="form-control input-focus " placeholder="Enter branch id" name="branchid" required>
 </div></div></div>
+
 <!--student name close-->
 
 <!--student name-->
+
+
+
 <div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Category:</h4></p>
-<input type="text" class="form-control input-focus " placeholder="Enter Category" name="category" required></div></div>
+<input type="text" class="form-control input-focus " placeholder="Enter Category" name="category" required>
+
+</div></div>
+
+
+
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Type:</h4></p>
 <input type="text" class="form-control input-focus " placeholder="Enter type" name="type" required>
 </div></div></div>
-<!--student name close-->  <div class="row p-t-20">
-<div class="col-md-6">
-                                   
+
+
+<!--student name close-->  
+<div class="row p-t-20">
+<div class="col-md-6">                                 
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Description:</h4></p>
 <textarea rows="3" cols="45" class="form-group input-focus" placeholder="Enter description" name="description" required></textarea>
 </div></div>
+
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Syllabus:</h4></p>
 <textarea rows="3" cols="45" class="form-group input-focus" placeholder="Enter description" name="syllabus" required></textarea>
 </div>
 </div>
 </div>
+
 <div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">

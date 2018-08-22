@@ -162,12 +162,15 @@ else{
 
 
 <div class="row p-t-20">
-
 <div class="col-md-6">
  <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Coursecategory</h4>
+
     <select name="category"  id="category" class="form-control input-focus">
+    
       <option value="choose">--Select--</option>
+ 
+ 
   <?php
     while($row = mysqli_fetch_assoc($courseresults)) 
      {
