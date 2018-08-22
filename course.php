@@ -12,10 +12,12 @@ include "config.php";
 //check connection
 
 $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+
 if ($conn->connect_error){
     die("connection failed:".mysqli_connect_error());
 }
 else{
+
     $sql = "select * from m_coursetype";
     $result = $conn->query($sql);
  
@@ -99,18 +101,38 @@ color:blue;
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Category:</h4></p>
-<input type="text" class="form-control input-focus " placeholder="Enter Category" name="category" required>
+  
+    <select name="category"  id="category" class="form-control input-focus" required>
+    <option value="choose">--Select--</option>
+  <?php
+    while($row = mysqli_fetch_assoc($courseresults)) 
+     {
+    ?>
+  <option name="id" value="<?php echo $row{"id"} ?>"> <?php echo $row{"name"} ?> </option>
+    <?php
+  }
+  ?>
+</select>
 
 </div></div>
-
-
 
 <div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Type:</h4></p>
-<input type="text" class="form-control input-focus " placeholder="Enter type" name="type" required>
-</div></div></div>
+<select name="type" id="type" class="form-control input-focus" required>
+<option value="choose">--Select--</option>
 
+<?php
+while($row = mysqli_fetch_assoc($result))
+{
+?>
+<option name="cid" value="<?php echo $row{"cid"}?>"> <?php echo $row{"coursetype"}?></option>
+<?php
+}
+?>
+</select>
+
+</div></div></div>
 
 <!--student name close-->  
 <div class="row p-t-20">
