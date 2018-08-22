@@ -45,9 +45,11 @@ color:blue;
 <div class="col-lg-12">
  <div class="card card-outline-primary">        
 <center>
+
 <div class="card-header">
 <h4 class="m-b-0 text-white">COURSE FORM</h4>
 </div>
+
 </center>                           
 <div class="card-body">
 <div class="basic-form">

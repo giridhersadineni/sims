@@ -6,6 +6,36 @@ if(!(isset($_SESSION['login'])))
 }
 ?>
 
+<?php
+if(isset($_POST['submit'])){
+include "config.php";
+    $branchname=$_POST['branchname'];
+$address=$_POST['address'];
+$phoneno=$_POST['phoneno'];
+$adminname=$_POST['adminname'];
+$email=$_POST['email'];
+
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+
+if (!$conn){
+    die("connection failed:".mysqli_connect_error());
+}
+
+$sql = "INSERT INTO m_branch (branchname, address, phoneno,adminname,email)
+VALUES ('$branchname','$address','$phoneno','$adminname', '$email')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} 
+else {
+    echo '<script> alert("Error: " '. $sql . '"<br>"' . $conn->error.'");</script>';
+}
+
+$conn->close();
+}
+
+?>
+
 
 
 <?php include "header.php";?>
@@ -47,7 +77,7 @@ h3
 </center>                  
 <div class="card-body">
 <div class="basic-form">
-<form action="branchdetails.php" method="POST">
+<form action="branch.php" method="POST">
      <div class="row p-t-20"><div class="col-md-6"><div class="form-group">
          <p class="text-muted m-b-15 f-s-12"><h4>Branch name</h4></p>
       <input type="text" class="form-control input-focus " placeholder="Enter branch " name="branchname"></div></div>
