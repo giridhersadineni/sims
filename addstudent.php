@@ -48,7 +48,9 @@ h3
 </center>
 <div class="card-body">
 <div class="basic-form">
+
 <form action="checkpost.php" method="POST">
+
 <div class="row p-t-20"><div class="col-md-6"><div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Student Firstname</h4></p>
 <input type="text" class="form-control input-focus " placeholder="Enter student firstname" name="firstname"></div></div>
@@ -57,6 +59,7 @@ h3
 <p class="text-muted m-b-15 f-s-12"><h4>Student Lastname</h4></p>
 <input type="text" class="form-control input-focus " placeholder="Enter student lastname" name="lastname">
 </div></div></div>
+
 <div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">

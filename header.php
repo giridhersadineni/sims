@@ -35,7 +35,8 @@
 <nav class="navbar top-navbar navbar-expand-md navbar-light">
           <!-- Logo -->
 <div class="navbar-header">
-<a class="navbar-brand" href="index.php">
+
+<a class="navbar-brand" href="#">
 <!-- Logo icon -->
 <b><img src="" alt="" class="dark-logo" /></b>
              <!--End Logo icon -->
@@ -67,42 +68,10 @@
 </div>
 <button type="submit" class="btn btn-info">Submit</button>
 </form>
+
 </li>
 <li class="col-lg-3 col-xlg-3 m-b-30">
-<h4 class="m-b-20">List style</h4>
-<!-- List style -->
-<ul class="list-style-none">
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-</ul>
-</li>
-                                    
-<li class="col-lg-3 col-xlg-3 m-b-30">
-<h4 class="m-b-20">List style</h4>
-<!-- List style -->
-<ul class="list-style-none">
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-</ul>
-</li>
-<li class="col-lg-3 col-xlg-3 m-b-30">
-<h4 class="m-b-20">List style</h4>
-<!-- List style -->
-<ul class="list-style-none">
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-<li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-</ul>
-</li>
-</ul>
+
 </div>
 </li>
 <!-- End Messages -->
@@ -222,7 +191,9 @@
                                    
 <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
 <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+
 <li><a href="index.php?loggedout=true"><i class="fa fa-power-off"></i> Logout</a></li>
+
 </ul>
 </div>
 </li>

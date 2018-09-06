@@ -36,6 +36,7 @@ else{
 </div>
 </div>
 <!-- End Bread crumb -->
+
 <!-- Container fluid  -->
 <div class="container-fluid">
 <!-- Start Page Content -->
@@ -44,6 +45,7 @@ else{
 <div class="card">
 <div class="card-body">
 <h4 class="card-title">Student Table</h4>
+
 <div class="table-responsive m-t-40">
 <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 <thead>
@@ -59,8 +61,8 @@ else{
 <th>Actions</th>
 </tr>
 </thead>
-<?php
 
+<?php
 if ($result->num_rows > 0) {
     // output data of each row
 while($row = mysqli_fetch_assoc($result)) {
@@ -73,9 +75,11 @@ echo '<td><a href="studentdetails.php?id='.$row["sid"].'" class="btn btn-success
 echo '<tr><td colspan="5">No Branches - Empty Table</td></tr>';
 }
 ?>
+
 <?php 
 mysqli_close($conn);
 ?> 
+
 </table>
 <!-- End PAge Content -->
 </div>

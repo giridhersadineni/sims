@@ -28,13 +28,18 @@
 <?php
 
 $error='';
-if(isset($_GET['loggedout']) && $_GET['loggedout']==true){
+session_start();
+if(isset($_GET['loggedout']) && $_GET['loggedout']==true)
+{
+    session_destroy();
     $_SESSION=array();
     $_COOKIE=array();
 }
 
+
 if (isset($_POST['submit'])) {
-if (empty($_POST['username']) || empty($_POST['password'])) {
+if (empty($_POST['username']) || empty($_POST['password']))
+ {
 $error = "Username or Password is invalid";
 }
 else
@@ -45,32 +50,49 @@ $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 $error=''; // Variable To Store Error Message
 
+//database connection
 include ('config.php');
-$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+//end database connection
 
 // To protect MySQL injection for Security purpose
 $username = stripslashes($username);
 $password = stripslashes($password);
+
 $username = mysqli_real_escape_string($conn,$username);
 $password = mysqli_real_escape_string($conn,$password);
+
 // Selecting Database
 // SQL query to fetch information of registerd users and finds user match.
 $result = $conn->query("select * from login where password='$password' AND username='$username'");
 $rows = $result->num_rows;
-if ($rows == 1) {
-    session_start(); // Starting Session
+
+if ($rows == 1) 
+{
+     // Starting Session
+
     $_SESSION['login']=$username; // Initializing Session
+
     setcookie("userid",$_POST['username']);
+
     header("location:dashboard.php");
-} else {
+
+} 
+else 
+{
+
 $error = "Username or Password is invalid";
+
 $_SESSION=array();
+
 session_destroy();
+
 }
+
 mysqli_close($conn); // Closing Connection
 }
 }
 
+/*
 if((isset($_SESSION['login'])))
 {
     header("location:dashboard.php");
@@ -79,7 +101,8 @@ if(isset($_GET['logoff'])){
     session_destroy();
     $_SESSION = array();
     header("location:index.php");
-}
+}*/
+
 ?>
 
 <body class="fix-header fix-sidebar">
@@ -101,28 +124,32 @@ if(isset($_GET['logoff'])){
  <form method="POST" action="index.php">
  <div class="form-group">
 <label>Register Name</label>
-<input type="text" class="form-control" name ="username" placeholder="Enter Name">
+<input type="text" class="form-control" name ="username" placeholder="Enter Name" value="rajesh">
 </div>
 <div class="form-group">
 <label>Password</label>
-<input type="password" class="form-control" name="password" placeholder="Password">
+<input type="password" class="form-control" name="password" placeholder="Password" value="rajesh123">
 </div>
 <div class="checkbox">
 <label>
 <input type="checkbox"> Remember Me
 </label>
 <label class="pull-right">
-<a href="#">Forgotten Password?</a>
+<a href="forgot.php">Forgotten Password?</a>
 </label>
 
-<label class="text-danger"><?php if($error!=''){
+<label class="text-danger">
+<?php if($error!='')
+{
  echo $error;
+}
+?>
 
-}?></label>
+</label>
 </div>
- <input type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" name="submit" value="Sign In"></input>
+ <input type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" name="submit" value="Sign In">
 <div class="register-link m-t-15 text-center">
-<p>Don't have account ? <a href="register.php"> Sign Up Here</a></p>
+<p>Don't have account ? <a href="registration.php"> Sign Up Here</a></p>
                                     </div>
                                 </form>
                             </div>

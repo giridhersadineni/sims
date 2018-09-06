@@ -1,7 +1,8 @@
 <?php
 $servername = "localhost";
 $dbuser = "rajesh";
-$dbpwd = "rajesh@123";
+$dbpwd = "rajesh123";
 $dbname = "sims";
 //connection 
+$conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 ?> 

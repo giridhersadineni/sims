@@ -66,7 +66,8 @@ else{
 <?php
 if ($result->num_rows > 0) {
     // output data of each row
-while($row = mysqli_fetch_assoc($result)) {
+while($row = mysqli_fetch_assoc($result)) 
+{
 echo "<tr>";
 echo "<td><a href='enquirydetails.php?id=". $row["enquiryid"]."'>".$row["enquiryid"]."</a></td><td>".$row["firstname"]."</td><td>" .$row["lastname"]. "</td><td>" .$row["fathername"]. "</td><td>" . $row["qualification"]. "</td><td>" . $row["contactdetails"]. "</td><td>" . $row["email"]."</td><td>" . $row["doj"]."</td>";
 

@@ -2,7 +2,7 @@
 <ul id="sidebarnav">
 <li class="nav-devider"></li>
 <li class="nav-label">Home</li>
-<li> <a class="has-arrow  " href="index.php" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a>
+<li> <a class="has-arrow  " href="dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a>
 <!--<ul aria-expanded="false" class="collapse">
 <li><a href="index.php">Ecommerce </a></li>
 <li><a href="index.php">Analytics </a></li>
@@ -27,7 +27,7 @@
 <ul aria-expanded="false" class="collapse">
 <li><a href="#"><i class="fa fa-user"></i>  Students</a></li>
 <li><a href="#"><i class="fa fa-user"></i  >Employee</a></li>
-<li><a href="#"><i class="fa fa-envelope"></i>Email</a></li>
+<li><a href="email.php"><i class="fa fa-envelope"></i>Email</a></li>
 <li><a href="#"><i class="fa fa-comment"></i> Bulk SMS</a></li>
 </ul>
 </li>

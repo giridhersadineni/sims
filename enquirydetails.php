@@ -5,6 +5,8 @@ if(!(isset($_SESSION['login'])))
     header("location:index.php?sessionexpired");
 }
 ?>
+
+
 <?php include "header.php";?>
 <?php
 include "config.php";
@@ -26,6 +28,7 @@ break;
 }
 }
 ?>
+
 <!--Profile Pic-->
 
 

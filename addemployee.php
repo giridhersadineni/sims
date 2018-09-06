@@ -128,7 +128,9 @@ h3
 <div class="col-md-6">
 <div class="form-group">
 <label>Designation :</label>
+
 <select class="form-control input-focus" name="designation">
+
 <option selected>--Select--</option>
 <option value="designation">Admin</option>
 <option value="designation">recptionist</option>
