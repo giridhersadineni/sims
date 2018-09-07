@@ -24,6 +24,7 @@ else{
 ?>
 
 <?php include "header.php";?>
+
  <div class="page-wrapper">
 <!-- Bread crumb -->
 <div class="row page-titles">

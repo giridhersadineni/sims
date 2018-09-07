@@ -73,7 +73,7 @@ echo "<td><a href='enquirydetails.php?id=". $row["enquiryid"]."'>".$row["enquiry
 
 echo '<td><a href="enquirydetails.php?id='.$row["enquiryid"].'" class="btn btn-success">View</a></td></tr>';
 
-    }
+ }
 }
  else {
     echo '<tr><td colspan="5">No Branches - Empty Table</td></tr>';
