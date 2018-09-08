@@ -11,17 +11,18 @@ if(!(isset($_SESSION['login'])))
 <?php
 include "config.php";
 //check connection
-
+   
 $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
 if ($conn->connect_error){
     die("connection failed:".mysqli_connect_error());
 }
 else{
- 
-    $coursequery="select * from m_courses";
+     $coursequery="select * from m_courses";
     $courseresults= $conn->query($coursequery);
 }
 ?>
+
+
 <?php include "header.php"?>
 
 <div class="page-wrapper">
@@ -53,7 +54,10 @@ else{
 <div class="card-body">
 <div class="card-body">
 <div class="input-states">
-<form class="form-horizontal">
+
+
+
+<form class="form-horizontal" method="post">
 
 
 <div class="form-group">
@@ -113,17 +117,15 @@ else{
 <tr>
 
 <td>
-
-<select name="category" onchange="showCustomer(this.value)" id="category" class="form-control input-focus">
     
-    <option value="choose">--Select--</option>
 
-
+<select name="courseselect"  onchange="fillCourseDetails(this.value)" id="courseselect" class="form-control input-focus">
+    <option value="0">--Select--</option>
 <?php
   while($row = mysqli_fetch_assoc($courseresults)) 
    {
   ?>
-<option name="cid" value="<?php echo $row{"cid"} ?>"> <?php echo $row{"name"} ?> </option>
+  <option name="cid" value="<?php echo $row{"cid"} ?>"> <?php echo $row{"name"} ?> </option>
   <?php
 }
 ?>
@@ -135,30 +137,61 @@ else{
     <td><input type="text" class="form-control" value=""/></td>
     <td><input type="text" class="form-control" value=""/></td>
     <td><input type="text" class="form-control" value=""/></td>
-    <td><input type="text" class="form-control" value=""/></td>
+
+    <td><input type="text" id="fee_select" class="form-control" value=""/></td>
 
 </tbody>
 
 </thead>
 </table>
 <script>
-
-function showCustomer(str) {
-  var xhttp;    
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("txtHint").innerHTML = this.responseText;
+    function fillCourseDetails(text){
+        var url ='api/v1/getcourses.php?course='+text;
+    console.log("Sending Request to URL:"+url);
+    var courseGetter = new XMLHttpRequest();
+    courseGetter.open('GET',url,true);
+    courseGetter.onreadystatechange=function (){
+        if(courseGetter.readyState==1 && courseGetter.status==200){
+            console.log(courseGetter.responseText);
+        }
     }
-  };
-  xhttp.open("GET", "m_courses.asp?q="+str, true);
-  xhttp.send();
-}
-</script>
+    }
+    var courseSelect = document.getElementById("courseselect");
+    courseSelect.addEventListener("change", fillCourseDetails(courseSelect.value));
+
+
+
+      function updateSubcategories(){
+        var fee_select = document.getElementById("category");
+        var fee_id = fee_select.options[fee_select.selectedIndex].value;
+        var url = 'api/v1/getcoursecategories.php?id=' + fee_id;
+        console.log("sending request fee id"+fee_id);
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onreadystatechange = function ()
+         {
+          if(xhr.readyState == 4 && xhr.status == 200)
+           {
+      console.log(xhr.responseText);
+     document.getElementById('fee_select').innerHTML="";
+    var Courses=JSON.parse(xhr.responseText);
+
+   Courses.forEach(element => {
+    document.getElementById('fee_select').innerHTML+='<option name='+element.coursename+'" value="'+element.coursename+'">'+element.coursename+'</option>"';
+});     
+ }   
+   }
+        xhr.send();
+      }
+
+      var cat_select = document.getElementById("name");
+      fee_select.addEventListener("change", updateSubcategories);
+      
+    </script>
+
+</div>
+
+
 
 <div class="row">
 <div class="col-lg-4 col-sm-5">

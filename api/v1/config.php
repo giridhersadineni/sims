@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $dbuser = "rajesh";
-$dbpwd = "rajesh@123";
+$dbpwd = "rajesh123";
 $dbname = "sims";
 //connection 
 ?> 

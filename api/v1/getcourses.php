@@ -1,7 +1,7 @@
 <?php 
 include "config.php";
 
-$category = $_GET["id"];
+$courseid = $_GET["course"];
 $resultset= array();
 
 $conn=mysqli_connect($servername,$dbuser,$dbpwd,$dbname);
@@ -11,17 +11,18 @@ if($conn->connect_error){
 }
 else{
 
-    $sql="SELECT `cid`,`name` FROM `m_courses` WHERE `categoryid`=".$category;
+    $sql='SELECT * FROM `m_courses` WHERE cid='. $courseid;
     
     $results=$conn->query($sql);
     while($row= mysqli_fetch_assoc($results)){
             
             $resultset[] = array(
                 'courseid' => $row['cid'],
-                'coursename' => $row['name']
+                'coursename' => $row['name'],
+                'fee'=>$row['fee'],
+                'duration'=>$row['duration']
              );
         }
-        
         echo json_encode($resultset);
 }
 

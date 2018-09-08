@@ -188,7 +188,7 @@ else{
   <div class="col-md-6">
    <div class="form-group">
   <p class="text-muted m-b-15 f-s-12"><h4>Course Details</h4></p>
-
+<!--selection-->
   <select name="courseinterested" id="cat_select" class="form-control input-focus">
     <option value="choose">--Select--</option>
 
@@ -196,34 +196,31 @@ else{
   </select>
   </div>
 </div>
-
+<!--Selection close-->
+<!--scripit start-->
 <script>
-      function updateSubcategories() {
+      function updateSubcategories() 
+      {
         var cat_select = document.getElementById("category");
-     
-
         var cat_id = cat_select.options[cat_select.selectedIndex].value;
-
         var url = 'api/v1/getcategories.php?id=' + cat_id;
         console.log("sending request cat id"+cat_id);
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.onreadystatechange = function () {
-          if(xhr.readyState == 4 && xhr.status == 200) {
-              console.log(xhr.responseText);
-              document.getElementById('cat_select').innerHTML="";
-             var Courses=JSON.parse(xhr.responseText);
-             Courses.forEach(element => {
-              document.getElementById('cat_select').innerHTML+='<option name='+element.coursename+'" value="'+element.coursename+'">'+element.coursename+'</option>"';
-             });
-            
-            }
+          if(xhr.readyState == 4 && xhr.status == 200)
+           {
+      console.log(xhr.responseText);
+document.getElementById('cat_select').innerHTML="";
+var Courses=JSON.parse(xhr.responseText);
 
-      
-        }
+Courses.forEach(element => {
+document.getElementById('cat_select').innerHTML+='<option name='+element.coursename+'" value="'+element.coursename+'">'+element.coursename+'</option>"';
+});     
+ }   
+   }
         xhr.send();
       }
-
       var cat_select = document.getElementById("category");
       cat_select.addEventListener("change", updateSubcategories);
     </script>
