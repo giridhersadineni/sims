@@ -74,7 +74,8 @@ break;
         // if everything is ok, try to upload file
        } else {
               $target_file = $target_dir . $row["firstname"].$row["sid"].".jpg";
-           if (move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file)) {
+           if (move_uploaded_file($_FILES["profilepic"]["tmp_name"], $target_file))
+            {
              $nsql="update students SET `ppfilename`='".$row["firstname"].$row["sid"].".jpg'"." where sid=".$_GET["id"];
              if($conn->query($nsql)===TRUE){
               echo "<script>alert('success ')</script>";  

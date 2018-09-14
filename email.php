@@ -11,18 +11,15 @@ h3
     color:blue;
 }
 </style>
+
 <div class="page-wrapper">
 <!-- Bread crumb -->
 
-<!-- End Bread crumb -->
 
-            <!-- Container fluid  -->
-<!-- Start Page Content -->
-
-
-<div class="row">
-<div class="col-lg-12">
+<div class="row justify-content-center">
+<div class="col-lg-9">
 <div class="card card-outline-primary">
+
 <center>
 <div class="card-header">
 <h4 class="m-b-0 text-white">EMAIL US</h4>                          
@@ -33,13 +30,11 @@ h3
 <div class="card">
 <div class="card-body">
 <h4 class="card-title"></h4>
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" role="tablist">
-</ul>
+
 <!-- Tab panes -->
-<div class="tab-content tabcontent-border">
 <div class="tab-pane active" id="employee" role="tabpanel">
 <div class="p-100">
+
 <div class="card-body">
 <div class="basic-form">
 
@@ -48,6 +43,7 @@ h3
 	if (!array_key_exists('Submitted',$_POST))
 	{
 ?>
+
 		<form method="post" action="email.php">
             
 <div class="row ">
@@ -83,7 +79,7 @@ h3
 <div class="col-md-6">
     <div class="form-group">
         Message:<br>
-<textarea name="Message" class="input-focus" cols="40" rows="10"></textarea>
+<textarea name="Message" class="input-focus" cols="60" rows="10" placeholder="--message here--"></textarea>
     </div>
     </div>
     </div>
@@ -98,7 +94,7 @@ h3
 <!-- /# card -->
 </div>
 <!-- /# column -->
-</div>
+
 
 <?php
 	}

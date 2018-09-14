@@ -29,7 +29,7 @@ else{
 <!-- Bread crumb -->
 <div class="row page-titles">
 
-<div class="col-md-5 align-self-center">
+<div class="col-md-5 ">
 <h3 class="text-primary"></h3>
  </div>
 <div class="col-md-7 align-self-center">
@@ -40,22 +40,25 @@ else{
 </div>
 </div>
 
-<div class="container-fluid">
-<div class="row">
-<div class="col-lg-12">
+<div class="container-fluid ">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-9">
+
 <div class="card card-outline-primary">
+
 <center>
 <div class="card-header">
 <h4 class="m-b-0 text-white">INVOICE FORM</h4>
 </div>
 </center>
+ 
 
 <div class="card">
 <div class="card-body">
 <div class="card-body">
 <div class="input-states">
-
-
 
 <form class="form-horizontal" method="post">
 
@@ -64,7 +67,7 @@ else{
 <div class="row">
 <label class="col-sm-3 control-label">Customer Name</label>
 <div class="col-sm-9">
-<input type="text" class="form-control">
+<input type="text" class="form-control input-focus">
 </div>
 </div>
 </div>
@@ -72,7 +75,7 @@ else{
 <div class="row">
 <label class="col-sm-3 control-label">Invoice#*</label>
 <div class="col-sm-9">
-<input type="text" class="form-control">
+<input type="text" class="form-control input-focus">
 </div>
 </div>
 </div>
@@ -80,7 +83,7 @@ else{
 <div class="row">
 <label class="col-sm-3 control-label">Order Number</label>
 <div class="col-sm-9">
-<input type="text" class="form-control ">
+<input type="text" class="form-control input-focus">
 </div>
 </div>
 </div>
@@ -88,7 +91,10 @@ else{
 <div class="row">
 <label class="col-sm-3 control-label">Invoice Date*</label>
 <div class="col-sm-9">
-<input type="date" class="form-control input-focus">
+
+<input  type="date" class="form-control" id="invoicedate">
+
+
 </div>
 </div>
 </div>
@@ -97,7 +103,7 @@ else{
 <div class="row">
 <label class="col-sm-3 control-label">Due Date</label>
 <div class="col-sm-9">
-<input type="date" class="form-control">
+<input type="date" class="form-control input-focus">
 </div>
 </div>
 </div>
@@ -134,32 +140,53 @@ else{
 
 </td>
 
-    <td><input type="text" class="form-control" value=""/></td>
-    <td><input type="text" class="form-control" value=""/></td>
-    <td><input type="text" class="form-control" value=""/></td>
-
-    <td><input type="text" id="fee_select" class="form-control" value=""/></td>
+    <td><input type="text" class="form-control input-focus" value=""/></td>
+    <td><input type="text" class="form-control input-focus" value=""/></td>
+    <td><input type="text" class="form-control input-focus" value=""/></td>
+  <!--amount display here-->
+    <td><input type="text" id="fee_select" class="form-control input-focus" value=""/></td>
 
 </tbody>
 
 </thead>
 </table>
+
+
 <script>
-    function fillCourseDetails(text){
-        var url ='api/v1/getcourses.php?course='+text;
-    console.log("Sending Request to URL:"+url);
+
+
+
+function fillCourseDetails(text){
+
+try
+{
+
+    var url ='api/v1/getcourses.php?course='+text;
+
     var courseGetter = new XMLHttpRequest();
+
     courseGetter.open('GET',url,true);
-    courseGetter.onreadystatechange=function (){
-        if(courseGetter.readyState==1 && courseGetter.status==200){
+
+    console.log("Sending Request to URL:"+url);
+
+    courseGetter.onreadystatechange=function ()
+    {
+        if(courseGetter.readyState===4 && courseGetter.status===200)
+        {
             console.log(courseGetter.responseText);
         }
     }
+    console.log(courseGetter.responseText);
     }
+    catch(err){
+        console.log(err);
+            
+       
+        }
+}
+
     var courseSelect = document.getElementById("courseselect");
     courseSelect.addEventListener("change", fillCourseDetails(courseSelect.value));
-
-
 
       function updateSubcategories(){
         var fee_select = document.getElementById("category");
@@ -172,12 +199,11 @@ else{
          {
           if(xhr.readyState == 4 && xhr.status == 200)
            {
-      console.log(xhr.responseText);
-     document.getElementById('fee_select').innerHTML="";
-    var Courses=JSON.parse(xhr.responseText);
-
-   Courses.forEach(element => {
-    document.getElementById('fee_select').innerHTML+='<option name='+element.coursename+'" value="'+element.coursename+'">'+element.coursename+'</option>"';
+       console.log(xhr.responseText);
+       document.getElementById('fee_select').innerHTML="";
+      var Courses=JSON.parse(xhr.responseText);
+       Courses.forEach(element => {
+       document.getElementById('fee_select').innerHTML+='<option name='+element.coursename+'" value="'+element.coursename+'">'+element.coursename+'</option>"';
 });     
  }   
    }
@@ -235,7 +261,8 @@ else{
 
 </div>
 </div><br>
-<a href="#" class="btn btn-success" > Send & Save</a></p>
+<a href="#" class="btn">Save as Draft</a>
+<a href="#" class="btn btn-success" > Send & Save</a>
 </form>
 </div>
 </div>
@@ -271,6 +298,16 @@ else{
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
     <script src="js/lib/datatables/datatables-init.js"></script>
+
+      <script>
+        (function fillInvoiceDate(){
+        console.log("Method fired : Fill Invoice Date");
+        document.getElementById('invoicedate').valueAsDate=new Date();
+
+        })();
+      
+      </script>
+
 </body>
 
 </html>

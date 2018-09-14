@@ -167,7 +167,7 @@ else{
  <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Coursecategory</h4>
 
-    <select name="category"  id="category" class="form-control input-focus">
+ <select name="category"  id="category" class="form-control input-focus">
     
       <option value="choose">--Select--</option>
  

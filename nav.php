@@ -34,9 +34,9 @@
 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-phone-square"></i><span class="hide-menu">Contact</span></a>
 <ul aria-expanded="false" class="collapse">
 <li><a href="#"><i class=""></i>  Students</a></li>
-<li><a href="#"><i class=""></i  >Employee</a></li>
+<li><a href="smser_multi.php"><i class=""></i  >Employee</a></li>
 <li><a href="email.php"><i class=""></i>Email</a></li>
-<li><a href="#"><i class=""></i> Bulk SMS</a></li>
+<li><a href="blucksms.php"><i class=""></i> Bulk SMS</a></li>
 </ul>
 </li>
 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-address-card"></i><span class="hide-menu">Admin</span></a>
