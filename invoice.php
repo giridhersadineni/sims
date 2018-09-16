@@ -112,7 +112,7 @@ else{
 
 <thead>
 <tr>
-<th>Iteam Details</th>
+<th>Item Details</th>
 <th>Quantity</th>
 <th>Rate</th>
 <th>Discount</th>
