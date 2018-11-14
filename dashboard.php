@@ -1,5 +1,3 @@
-
-
 <?php 
 session_start();
 if(!(isset($_SESSION['login'])))
@@ -7,6 +5,24 @@ if(!(isset($_SESSION['login'])))
     header("location:index.php?sessionexpired");
 }
 ?>
+<?php include 'config.php';
+  $conn = mysqli_connect($servername, $dbuser, $dbpwd, $dbname);
+  if (!$conn){
+    die("connection failed:".mysqli_connect_error());
+}
+$gettotalstudents ="SELECT count(firstname) AS total FROM students";
+$totalstudents=mysqli_query($conn,$gettotalstudents);
+
+$gettotalcourses="SELECT count(cid) AS total FROM m_courses";
+$totalcourses=mysqli_query($conn,$gettotalcourses);
+
+$gettotalenquiries="SELECT count(enquiryid) AS total FROM enquiries";
+$totalenquiries=mysqli_query($conn,$gettotalenquiries);
+
+?>
+
+
+
 <?php  include "header.php";?>
  <div class="page-wrapper">
             <!-- Bread crumb -->
@@ -33,8 +49,12 @@ if(!(isset($_SESSION['login'])))
                                     <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>568120</h2>
-                                    <p class="m-b-0">Total Revenue</p>
+                                <h2><?php
+                                    $values=mysqli_fetch_assoc($totalstudents);
+                                    $num_rows=$values['total'];
+                                    echo $num_rows;
+                                    ?></h2>
+                                    <p class="m-b-0">Total Students</p>
                                 </div>
                             </div>
                         </div>
@@ -46,8 +66,12 @@ if(!(isset($_SESSION['login'])))
                                     <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>1178</h2>
-                                    <p class="m-b-0">Sales</p>
+                                <h2><?php
+                                    $values=mysqli_fetch_assoc($totalenquiries);
+                                    $num_rows=$values['total'];
+                                    echo $num_rows;
+                                    ?></h2>
+                                    <p class="m-b-0">Enquires</p>
                                 </div>
                             </div>
                         </div>
@@ -59,8 +83,65 @@ if(!(isset($_SESSION['login'])))
                                     <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>25</h2>
-                                    <p class="m-b-0">Stores</p>
+                                  <h2><?php
+                                  $values=mysqli_fetch_assoc($totalcourses);
+                                  $num_rows=$values['total'];
+                                  echo $num_rows;
+                                  ?>
+                                  </h2>
+                                    <p class="m-b-0">Total Courses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-user f-s-40 color-warning"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>0</h2>
+                                    <p class="m-b-0">PGDC Course</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-user f-s-40 color-info"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>0</h2>
+                                    <p class="m-b-0">Web Development Course</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-user f-s-40 color-success"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>0</h2>
+                                    <p class="m-b-0">Computer HardWare Network</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-user f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2>0</h2>
+                                    <p class="m-b-0">Android Developer</p>
                                 </div>
                             </div>
                         </div>
@@ -72,58 +153,14 @@ if(!(isset($_SESSION['login'])))
                                     <span><i class="fa fa-user f-s-40 color-danger"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>847</h2>
-                                    <p class="m-b-0">Customer</p>
+                                    <h2>0</h2>
+                                    <p class="m-b-0">Hacking Course</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row bg-white m-l-0 m-r-0 box-shadow ">
-
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Extra Area Chart</h4>
-                                <div id="extra-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-
-                    <!-- column -->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body browser">
-                                <p class="f-w-600">iMacs <span class="pull-right">85%</span></p>
-                                <div class="progress ">
-                                    <div role="progressbar" style="width: 85%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">iBooks<span class="pull-right">90%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">iPhone<span class="pull-right">65%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-                                <p class="m-t-30 f-w-600">Samsung<span class="pull-right">65%</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-
-								<p class="m-t-30 f-w-600">android<span class="pull-right">65%</span></p>
-                                <div class="progress m-b-30">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- column -->
-                </div>
+               
 
 <?php include "footer.php";?>
