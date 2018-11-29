@@ -60,41 +60,31 @@ else{
 <div class="card-body">
 <div class="input-states">
 
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" action="invoicedetls" method="post">
 
 
 <div class="form-group">
 <div class="row">
 <label class="col-sm-3 control-label">Customer Name</label>
 <div class="col-sm-9">
-<input type="text" class="form-control input-focus">
+<input type="text" class="form-control input-focus" name="cname">
 </div>
 </div>
 </div>
 <div class="form-group has-warning">
 <div class="row">
-<label class="col-sm-3 control-label">Invoice#*</label>
+<label class="col-sm-3 control-label">Invoice Number</label>
 <div class="col-sm-9">
-<input type="text" class="form-control input-focus">
+<input type="text" class="form-control input-focus" name="invoiceno">
 </div>
 </div>
 </div>
-<div class="form-group">
-<div class="row">
-<label class="col-sm-3 control-label">Order Number</label>
-<div class="col-sm-9">
-<input type="text" class="form-control input-focus">
-</div>
-</div>
-</div>
+
 <div class="form-group has-warning ">
 <div class="row">
 <label class="col-sm-3 control-label">Invoice Date*</label>
 <div class="col-sm-9">
-
-<input  type="date" class="form-control" id="invoicedate">
-
-
+<input  type="date" class="form-control" id="invoicedate" name="invoicedate">
 </div>
 </div>
 </div>
@@ -103,7 +93,7 @@ else{
 <div class="row">
 <label class="col-sm-3 control-label">Due Date</label>
 <div class="col-sm-9">
-<input type="date" class="form-control input-focus">
+<input type="date" class="form-control input-focus" name="duedate">
 </div>
 </div>
 </div>

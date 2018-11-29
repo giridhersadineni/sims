@@ -7,6 +7,8 @@ $fathername=$_POST["fathername"];
 $fatherphone=$_POST["fatherphone"];
 $phone=$_POST["phone"];
 $emailid=$_POST["mailid"];
+$college=$_POST["college"];
+$course=$_POST["course"];
 $branchid=$_POST["branchid"];
 $dob=$_POST["dob"];
 $gender=$_POST["gender"];
@@ -24,11 +26,11 @@ if (!$conn){
     die("connection failed:".mysqli_connect_error());
 }
 
-$sql = "INSERT INTO students (firstname, lastname,fathername,fatherphone,phone,emailid,branchid,dob,gender,addressline1,addressline2, mandal,city,state,pincode)
-VALUES ('$firstname', '$lastname','$fathername','$fatherphone','$phone','$emailid','$branchid','$dob','$gender','$addressline1','$addressline2','$mandal','$city','$state','$pincode')";
+$sql = "INSERT INTO students (firstname, lastname,fathername,fatherphone,phone,emailid,college,course,branchid,dob,gender,addressline1,addressline2, mandal,city,state,pincode)
+VALUES ('$firstname', '$lastname','$fathername','$fatherphone','$phone','$emailid','$college','$course','$branchid','$dob','$gender','$addressline1','$addressline2','$mandal','$city','$state','$pincode')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo " <h2 >Registered Successfully</h2>";
 } 
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;

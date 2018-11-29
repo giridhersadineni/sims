@@ -78,19 +78,31 @@ h3
 <input type="text" class="form-control input-focus " placeholder="Enter contact" name="phone"></div></div>
 <div class="col-md-6">
 <div class="form-group">
-<p class="text-muted m-b-15 f-s-12"><h4>Branch id</h4></p>
-<input type="text" class="form-control input-focus" placeholder="Enter Branch id" name="branchid">
+<p class="text-muted m-b-15 f-s-12"><h4>S.No:</h4></p>
+<input type="text" class="form-control input-focus" placeholder="Enter Serial number" name="branchid">
 </div> </div>
 </div>
 <!--student name close-->
 
 <div class="row p-t-20">
-<div class="col-md-12">
+<div class="col-md-6">
 <div class="form-group">
 <p class="text-muted m-b-15 f-s-12"><h4>Email</h4></p>
-<input type="email" class="form-control input-focus" placeholder="enter your mail-id" name="mailid">
+<input type="email" class="form-control input-focus" placeholder="Enter your mail-id" name="mailid">
 </div></div>
+<div class="col-md-6">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>College Name</h4></p>
+<input type="text" class="form-control input-focus" placeholder="Enter College name" name="college">
+</div> </div>
+ 
  </div>
+ <div class="row p-t-20">
+<div class="col-md-6">
+<div class="form-group">
+<p class="text-muted m-b-15 f-s-12"><h4>Group</h4></p>
+<input type="text" class="form-control input-focus" placeholder="Enter Group" name="course">
+</div></div></div>
 <div class="row p-t-20">
 <div class="col-md-6">
 <div class="form-group">
